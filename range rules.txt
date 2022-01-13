@@ -1,0 +1,22 @@
+These two rules basically common knowledge in AM4:
+F-class seats are the most profitable ones, followed by J and Y class seats.
+The optimal ticket price is Y-autoprice *1.1; J-autoprice *1.08; F-autoprice*1.06
+
+But what if I told you the first one is actually wrong? Well, not completely wrong, but not 100% right either.
+To understand that, we have to understand the first rule. First class seats are more profitable due to the higher base value in the ticket formula (the "b" in the ax+b formula); the base value of the first class ticket prices is higher than 3x the basis value of the economy class ticket prices.
+Realism: 1000 (F) > 150 (Y) * 3; Easy: 1200 (F) > 170 (Y) * 3
+
+However we multiply the Y-class autoprice by 1.1, while multiplying the F-class autoprice by 1.06
+-> If your route is long enough, Y-class and J-class will be more profitable than F-class.
+
+The exact data is this:
+However, keep in mind the “border” is quite inaccurate, at distances ±10km around the border there will be two classes which will make the same profit.
+
+Realism:
+If distance <13889km, use the standard formula (F>J>Y)
+If distance >13889km but <15694km: J>F>Y
+If distance >15694km but <17500km: J>Y>F
+If distance >17500km: Y>J>F
+~13889km: J ≈ F
+~15694km: Y ≈ F
+~17500km: Y ≈ J

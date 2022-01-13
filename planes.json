@@ -1,0 +1,523 @@
+{
+    "ATR 42-320": {
+        "seats": 46,
+        "range": 1730,
+        "speed": 483
+    },
+    "Il-96M": {
+        "range": 12800,
+        "speed": 842,
+        "seats": 370
+    },
+    "L-1011-500": {
+        "range": 9900,
+        "speed": 876,
+        "seats": 315,
+        "runway": 9400,
+        "cost": 33120715,
+        "fuel": 19.2,
+        "a-check": 3146468
+    },
+    "MD-81": {
+        "range": 2910,
+        "speed": 819,
+        "seats": 172,
+        "runway": 2000,
+        "cost": 2296357,
+        "fuel": 17.44,
+        "a-check": 482234
+    },
+    "MD-88": {
+        "range": 3800,
+        "speed": 908,
+        "seats": 172,
+        "runway": 2000,
+        "cost": 2998679,
+        "fuel": 17.44,
+        "a-check": 629722
+    },
+    "Il-96-400": {
+        "range": 10000,
+        "speed": 809,
+        "seats": 436,
+        "runway": 2000,
+        "cost": 40441348,
+        "fuel": 27.72,
+        "a-check": 4448548
+    },
+    "MD-11C": {
+        "range": 12435,
+        "speed": 955,
+        "seats": 410,
+        "runway": 2000,
+        "cost": 56273548,
+        "fuel": 23.28,
+        "a-check": 9449408
+    },
+    "MD-11": {
+        "range": 12655,
+        "speed": 788,
+        "seats": 410,
+        "runway": 2000,
+        "cost": 57269139,
+        "fuel": 23.28,
+        "a-check":  9449408
+    },
+    "MD-11ER": {
+        "range": 13408,
+        "speed": 788,
+        "seats": 410,
+        "runway": 2000
+    },
+    "A220-100": {
+        "range": 5750,
+        "speed": 871,
+        "seats": 135,
+        "runway": 4790,
+        "cost": 3234528,
+        "fuel": 11,
+        "a-check": 307280
+    },
+    "A320-200": {
+        "range": 5750,
+        "speed": 823,
+        "seats": 164,
+        "runway": 6500,
+        "cost": 6770196,
+        "fuel": 11.55,
+        "a-check": 1049380
+    },
+    "A321-200": {
+        "range": 6000,
+        "speed": 780,
+        "seats": 220
+    },
+    "A320-NEO": {
+        "range": 7000,
+        "speed": 884,
+        "seats": 164,
+        "runway": 6500,
+        "cost": 14770196,
+        "fuel": 7.7,
+        "a-check": 590808
+    },
+    "A321-XLR": {
+        "range": 8900,
+        "speed": 911,
+        "seats": 220,
+        "runway": 7500,
+        "cost": 29990999,
+        "fuel": 15.40,
+        "a-check":  1020000
+    },
+    "A300B2-200": {
+        "range": 3430,
+        "speed": 847,
+        "seats": 269,
+        "runway": 7625,
+        "cost": 11605297,
+        "fuel": 16.38,
+        "a-check":   2611192
+    },
+    "A310-200": {
+        "range": 6800,
+        "speed": 850,
+        "seats": 280
+    },
+    "A330-300": {
+        "range": 10000,
+        "speed": 871,
+        "seats": 335,
+        "runway": 9090,
+        "cost": 43330073,
+        "fuel": 16.74,
+        "a-check": 6066210
+    },
+    "A340-300": {
+        "range": 14000,
+        "speed": 896,
+        "seats": 335,
+        "runway": 10200,
+        "cost": 55469568,
+        "fuel": 20.60,
+        "a-check": 7211044
+    },
+    "A350-1000": {
+        "range": 14800,
+        "speed": 860,
+        "seats": 350,
+        "runway": 8760,
+        "cost": 77538384,
+        "fuel": 15.98,
+        "a-check": 3101536
+    },
+    "A350-900R": {
+        "range": 14500,
+        "speed": 860,
+        "seats": 314,
+        "runway": 8760,
+        "cost": 82723576,
+        "fuel": 15.98,
+        "a-check":  3308944
+    },
+    "A350-900ULR": {
+        "range": 18000,
+        "speed": 848,
+        "seats": 300
+    },
+    "A330-900neo": {
+        "range": 12130,
+        "speed": 801,
+        "seats": 440,
+        "runway": 9950,
+        "cost": 109315468,
+        "fuel": 13,
+        "a-check": 4372618
+    },
+    "A340-600": {
+        "range": 14630,
+        "speed": 871,
+        "seats": 380,
+        "runway": 10200,
+        "cost": 69887329,
+        "fuel": 20.68,
+        "a-check": 6289860
+    },
+    "A350-800": {
+        "range": 14500,
+        "speed": 945,
+        "seats": 270
+    },
+    "A380-800": {
+        "range": 14500,
+        "speed": 945,
+        "seats": 600,
+        "runway": 9680,
+        "cost": 215629503,
+        "fuel": 22.89,
+        "a-check": 12937770
+    },
+    "F28-6000": {
+        "seats": 85,
+        "range": 1650,
+        "speed": 767,
+        "runway": 2000,
+        "cost": 707020,
+        "fuel": 9.10,
+        "a-check": 155544
+    },
+    "C919": {
+        "range": 5555,
+        "speed": 980,
+        "seats": 168,
+        "runway": 5200,
+        "cost":  6517748,
+        "fuel": 11.44,
+        "a-check": 619186
+    },
+    "CRJ 100": {
+        "range": 2417,
+        "speed": 840,
+        "seats": 50,
+        "runway": 4500,
+        "cost":  416025,
+        "fuel": 7.56,
+        "a-check": 56164
+    },
+    "C S300": {
+        "range": 5463,
+        "speed": 855,
+        "seats": 135,
+        "runway": 4800,
+        "cost":  4984356,
+        "fuel": 14.84,
+        "a-check": 199374
+    },
+    "CRJ 1000": {
+        "range": 2760,
+        "speed": 827,
+        "seats": 100
+    },
+    "ERJ 190-200": {
+        "seats": 122,
+        "range": 2593,
+        "speed": 845,
+        "runway": 2000,
+        "cost":  1598528,
+        "fuel": 10.10,
+        "a-check": 119890
+    },
+    "ERJ 190-200LR": {
+        "range": 3334,
+        "speed": 870,
+        "seats": 122,
+        "runway": 2000,
+        "cost":  2055338,
+        "fuel": 10.10,
+        "a-check": 123320
+    },
+    "ERJ 190-200AR": {
+        "range": 4077,
+        "speed": 870,
+        "seats": 120,
+        "runway": 2000,
+        "cost": 2825347,
+        "fuel": 9.09,
+        "a-check": 169520
+    },
+    "DC-9-10": {
+        "seats": 90,
+        "range": 2036,
+        "speed": 894
+    },
+    "MC-21-300": {
+        "seats": 198,
+        "range": 5000,
+        "speed": 1096,
+        "runway": 6600,
+        "cost":  4552276,
+        "fuel": 17.51,
+        "a-check": 432466
+    },
+    "MC-21-400": {
+        "seats": 230,
+        "range": 5500,
+        "speed": 1096,
+        "runway": 6800,
+        "cost":  5204503,
+        "fuel": 19.57,
+        "a-check": 494428
+    },
+    "DC-10-10": {
+        "seats": 250,
+        "range": 6436,
+        "speed": 958,
+        "runway": 2000,
+        "cost":  6806411,
+        "fuel": 20.33,
+        "a-check": 1633538
+    },
+    "B747SP": {
+        "seats": 350,
+        "range": 10800,
+        "speed": 980,
+        "runway": 7545,
+        "cost":  40824000,
+        "fuel": 20.24,
+        "a-check": 3878280
+    },
+    "B747-8": {
+        "range": 14815,
+        "speed": 1097,
+        "seats": 467,
+        "runway": 10250,
+        "cost":  121097727,
+        "fuel": 21.84,
+        "a-check":  8476840
+    },
+    "B727-200": {
+        "range": 4450,
+        "speed": 972,
+        "seats": 189,
+        "runway": 6450,
+        "cost":  4883110,
+        "fuel": 15.15,
+        "a-check": 1342856
+    },
+    "B727-100": {
+        "range": 3056,
+        "speed": 1009,
+        "seats": 131,
+        "runway": 8300,
+        "cost":  1364217,
+        "fuel": 13,
+        "a-check": 129600
+    },
+    "B757-300": {
+        "range": 6421,
+        "speed": 842,
+        "seats": 243,
+        "runway": 7800,
+        "cost":  7002640,
+        "fuel": 15.81,
+        "a-check": 735278
+    },
+    "B737 MAX 9": {
+        "range": 7000,
+        "speed": 881,
+        "seats": 200,
+        "runway": 8300,
+        "cost":  18849600,
+        "fuel": 7.21,
+        "a-check": 753984
+    },
+    "B737 MAX 8": {
+        "range": 6500,
+        "speed": 881,
+        "seats": 180,
+        "runway": 7500,
+        "cost": 18011300,
+        "fuel": 7.21,
+        "a-check": 720452
+    },
+    "B777-200": {
+        "range": 9695,
+        "speed": 950,
+        "seats": 400,
+        "runway": 9000,
+        "cost": 60803647,
+        "fuel": 17.46,
+        "a-check":  7296438
+    },
+    "B777-200LR": {
+        "range": 14500,
+        "speed": 986,
+        "seats": 300,
+        "runway": 11000,
+        "cost": 65912406,
+        "fuel": 17.86,
+        "a-check": 4284306
+    },
+    "B777-300ER": {
+        "range": 14685,
+        "speed": 1036,
+        "seats": 350,
+        "runway": 11000,
+        "cost": 68243786,
+        "fuel": 19.19,
+        "a-check":  5800722
+    },
+    "B787-9": {
+        "range": 14500,
+        "speed": 813,
+        "seats": 290
+    },
+    "B747-400C": {
+        "range": 13360,
+        "speed": 1010,
+        "seats": 410,
+        "runway": 10250,
+        "cost": 72722924,
+        "fuel": 19.32,
+        "a-check":  10908438
+    },
+    "B777-8X": {
+        "range": 16100,
+        "speed": 951,
+        "seats": 350,
+        "runway": 9000,
+        "cost": 77983382,
+        "fuel": 19.60,
+        "a-check": 3119336
+    },
+    "B777-200ER": {
+        "range": 14260,
+        "speed": 1014,
+        "seats": 400,
+        "runway": 11000,
+        "cost": 84172921,
+        "fuel": 17.67,
+        "a-check": 9259022
+    },
+    "B777-300": {
+        "range": 14685,
+        "speed": 1036,
+        "seats": 350,
+        "runway": 9000,
+        "cost": 89987157,
+        "fuel": 17.67,
+        "a-check": 9898588
+    },
+    "B777-9X": {
+        "range": 14500,
+        "speed": 931,
+        "seats": 406,
+        "runway": 9000,
+        "cost": 91150989,
+        "fuel": 21.56,
+        "a-check": 3646040
+    },
+    "B747-400ER": {
+        "range": 14500,
+        "speed": 866,
+        "seats": 416,
+        "runway": 10250
+    },
+    "B737-900ER": {
+        "seats": 215,
+        "range": 5925,
+        "speed": 831,
+        "runway": 7550,
+        "cost": 9225912,
+        "fuel": 11.11,
+        "a-check": 1014850
+    },
+    "B737-900": {
+        "range": 3815,
+        "speed": 836,
+        "seats": 177,
+        "runway": 7550,
+        "cost": 5535200,
+        "fuel": 10.10,
+        "a-check": 387464
+    },
+    "B737 MAX 10": {
+        "range": 7000,
+        "speed": 881,
+        "seats": 225,
+        "runway": 7600,
+        "cost": 19649600,
+        "fuel": 7.21,
+        "a-check": 800000
+    },
+    "B787-10": {
+        "range": 12000,
+        "speed": 860,
+        "seats": 440,
+        "runway": 8000,
+        "cost":  72795638,
+        "fuel": 18.62,
+        "a-check": 6915586
+    },
+    "B777-300LR": {
+        "range": 14500,
+        "speed": 1026,
+        "seats": 451,
+        "runway": 11000,
+        "cost":  131844032,
+        "fuel": 21.63,
+        "a-check": 10547522
+    },
+    "B747-300": {
+        "range": 12400,
+        "speed": 884,
+        "seats": 412,
+        "runway": 10250,
+        "cost": 63231515,
+        "fuel": 20.68,
+        "a-check": 12330146
+    },
+    "B747-400D": {
+        "range": 2905,
+        "speed": 846,
+        "seats": 568
+    },
+    "B787-8": {
+        "range": 14500,
+        "speed": 813,
+        "seats": 250,
+        "runway": 9000,
+        "cost": 19411920,
+        "fuel": 14.4,
+        "a-check": 1358834
+    },
+    "B737-800": {
+        "range": 7000,
+        "speed": 780,
+        "seats": 184,
+        "runway": 7550,
+        "cost": 4407858,
+        "fuel": 9.40,
+        "a-check": 462826
+    }
+}

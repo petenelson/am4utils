@@ -1,0 +1,333 @@
+{
+	"TEST": {
+		"distance": 2500,
+		"demand": {
+			"y": 226,
+			"j": 144,
+			"f": 96
+		}
+	},
+
+	"MKBS": {
+		"distance": 2492,
+		"demand": {
+			"y": 226,
+			"j": 144,
+			"f": 96
+		}
+	},
+
+	"KMPV": {
+		"distance": 409,
+		"demand": {
+			"y": 992,
+			"j": 155,
+			"f": 212
+		}
+	},
+
+	"EKCH": {
+		"distance": 6189,
+		"demand": {
+			"y": 794,
+			"j": 765,
+			"f": 226
+		}
+	},
+
+
+	"EGLL": {
+		"distance": 5540,
+		"demand": {
+			"y": 757,
+			"j": 507,
+			"f": 215
+		}
+	},
+
+	"KKLS": {
+		"distance": 3953,
+		"demand": {
+			"y": 664,
+			"j": 218,
+			"f": 136
+		}
+	},
+
+	"MTJA": {
+		"distance": 2494,
+		"demand": {
+			"y": 341,
+			"j": 252,
+			"f": 42
+		}
+	},
+
+	"KSTL": {
+		"distance": 1433,
+		"demand": {
+			"y": 744,
+			"j": 472,
+			"f": 122
+		}
+	},
+
+	"KBOS": {
+		"distance": 301,
+		"demand": {
+			"y": 533,
+			"j": 285,
+			"f": 245
+		}
+	},
+
+	"BIKF": {
+		"distance": 4164,
+		"demand": {
+			"y": 936,
+			"j": 465,
+			"f": 217
+		}
+	},
+
+	"KDSM": {
+		"distance": 1666,
+		"demand": {
+			"y": 585,
+			"j": 328,
+			"f": 211
+		}
+	},
+
+	"MUHA": {
+		"distance": 2123,
+		"demand": {
+			"y": 1403,
+			"j": 430,
+			"f": 89
+		}
+	},
+
+	"KGYY": {
+		"distance": 1146,
+		"demand": {
+			"y": 1295,
+			"j": 195,
+			"f": 160
+		}
+	},
+
+	"EDMA": {
+		"distance": 6422,
+		"demand": {
+			"y": 574,
+			"j": 229,
+			"f": 243
+		}
+	},
+
+	"SKRG": {
+		"distance": 3837,
+		"demand": {
+			"y": 476,
+			"j": 450,
+			"f": 82
+		}
+	},
+
+	"KROC": {
+		"distance": 425,
+		"demand": {
+			"y": 1250,
+			"j": 188,
+			"f": 85
+		}
+	},
+
+	"KSEA": {
+		"distance": 3887,
+		"demand": {
+			"y": 1114,
+			"j": 237,
+			"f": 402
+		}
+	},
+
+	"CYYZ": {
+		"distance": 589,
+		"demand": {
+			"y": 917,
+			"j": 644,
+			"f": 107
+		}
+	},
+	"KMKE": {
+		"distance": 1197,
+		"demand": {
+			"y": 627,
+			"j": 254,
+			"f": 226
+		}
+	},
+	"KMWH": {
+		"distance": 3666,
+		"demand": {
+			"y": 456,
+			"j": 550,
+			"f": 93
+		}
+	},
+	"KSFO": {
+		"distance": 4152,
+		"demand": {
+			"y": 845,
+			"j": 480,
+			"f": 110
+		}
+	},
+	"EDAH": {
+		"distance": 6357,
+		"demand": {
+			"y": 473,
+			"j": 545,
+			"f": 140
+		}
+	},
+	"KIAH": {
+		"distance": 2278,
+		"demand": {
+			"y": 1444,
+			"j": 302,
+			"f": 92
+		}
+	},
+	"KDET": {
+		"distance": 793,
+		"demand": {
+			"y": 950,
+			"j": 231,
+			"f": 100
+		}
+	},
+
+	"KLAS": {
+		"distance": 3610,
+		"demand": {
+			"y": 1331,
+			"j": 419,
+			"f": 209
+		}
+	},
+
+
+
+	"EIDW": {
+		"distance": 5104,
+		"demand": {
+			"y": 1509,
+			"j": 319,
+			"f": 103
+		}
+	},
+
+	"EINN": {
+		"distance": 4946,
+		"demand": {
+			"y": 348,
+			"j": 621,
+			"f": 161
+		}
+	},
+
+	"KHIO": {
+		"distance": 3967,
+		"demand": {
+			"y": 948,
+			"j": 129,
+			"f": 136
+		}
+	},
+
+	"YPPH": {
+		"distance": 18714,
+		"demand": {
+			"y": 592,
+			"j": 217,
+			"f": 111
+		}
+	},
+
+	"EDAH": {
+		"distance": 6357,
+		"demand": {
+			"y": 473,
+			"j": 545,
+			"f": 140
+		}
+	},
+
+	"TNCA": {
+		"distance": 2278,
+		"demand": {
+			"y": 896,
+			"j": 622,
+			"f": 350
+		}
+	},
+	"KGCN": {
+		"distance": 3362,
+		"demand": {
+			"y": 1148,
+			"j": 175,
+			"f": 84
+		}
+	},
+	"CYDP": {
+		"distance": 1974,
+		"demand": {
+			"y": 843,
+			"j": 342,
+			"f": 62
+		}
+	},
+	"KLAX": {
+		"distance": 3975,
+		"demand": {
+			"y": 893,
+			"j": 228,
+			"f": 275
+		}
+	},
+	"KDEN": {
+		"distance": 2610,
+		"demand": {
+			"y": 1752,
+			"j": 308,
+			"f": 239
+		}
+	},
+	"KMSP": {
+		"distance": 1652,
+		"demand": {
+			"y": 990,
+			"j": 266,
+			"f": 104
+		}
+	},
+	"KATL": {
+		"distance": 1223,
+		"demand": {
+			"y": 873,
+			"j": 630,
+			"f": 164
+		}
+	},
+	"KMIA": {
+		"distance": 1758,
+		"demand": {
+			"y": 1362,
+			"j": 384,
+			"f": 357
+		}
+	}
+}

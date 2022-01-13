@@ -1,0 +1,588 @@
+{
+	"TEST": {
+		"distance": 1807,
+		"demand": {
+			"y": 1057,
+			"j": 508,
+			"f": 62
+		}
+	},
+
+	"KISO": {
+		"distance": 1807,
+		"demand": {
+			"y": 1057,
+			"j": 508,
+			"f": 62
+		}
+	},
+
+	"KATL": {
+		"distance": 1175,
+		"demand": {
+			"y": 713,
+			"j": 804,
+			"f": 238
+		}
+	},
+
+	"PACM": {
+		"distance": 5716,
+		"demand": {
+			"y": 588,
+			"j": 396,
+			"f": 294
+		}
+	},
+
+	"KGCN": {
+		"distance": 1426,
+		"demand": {
+			"y": 1013,
+			"j": 402,
+			"f": 119
+		}
+	},
+
+	"KMPV": {
+		"distance": 2458,
+		"demand": {
+			"y": 617,
+			"j": 316,
+			"f": 223
+		}
+	},
+
+	"KLAS": {
+		"distance": 1695,
+		"demand": {
+			"y": 595,
+			"j": 673,
+			"f": 233
+		}
+	},
+
+
+	"KJFK": {
+		"distance": 2235,
+		"demand": {
+			"y": 574,
+			"j": 623,
+			"f": 122
+		}
+	},
+
+	"KMWH": {
+		"distance": 2460,
+		"demand": {
+			"y": 885,
+			"j": 181,
+			"f": 109
+		}
+	},
+
+	"CYCA": {
+		"distance": 3889,
+		"demand": {
+			"y": 687,
+			"j": 220,
+			"f": 292
+		}
+	},
+
+	"KRSL": {
+		"distance": 684,
+		"demand": {
+			"y": 607,
+			"j": 440,
+			"f": 257
+		}
+	},
+
+	"KMCK": {
+		"distance": 872,
+		"demand": {
+			"y": 750,
+			"j": 451,
+			"f": 118
+		}
+	},
+
+	"KBNA": {
+		"distance": 1015,
+		"demand": {
+			"y": 997,
+			"j": 261,
+			"f": 94
+		}
+	},
+
+	"KRDU": {
+		"distance": 1705,
+		"demand": {
+			"y": 631,
+			"j": 438,
+			"f": 228
+		}
+	},
+
+	"KSRR": {
+		"distance": 794,
+		"demand": {
+			"y": 308,
+			"j": 514,
+			"f": 136
+		}
+	},
+
+	"PHNL": {
+		"distance": 6081,
+		"demand": {
+			"y": 811,
+			"j": 451,
+			"f": 56
+		}
+	},
+
+	"KHIO": {
+		"distance": 2620,
+		"demand": {
+			"y": 1070,
+			"j": 300,
+			"f": 68
+		}
+	},
+
+	"MMAA": {
+		"distance": 1816,
+		"demand": {
+			"y": 1256,
+			"j": 206,
+			"f": 98
+		}
+	},
+
+	"KRNO": {
+		"distance": 2161,
+		"demand": {
+			"y": 876,
+			"j": 195,
+			"f": 144
+		}
+	},
+
+	"BIEG": {
+		"distance": 6562,
+		"demand": {
+			"y": 512,
+			"j": 180,
+			"f": 73
+		}
+	},
+
+	"KSTL": {
+		"distance": 886,
+		"demand": {
+			"y": 1341,
+			"j": 217,
+			"f": 98
+		}
+	},
+
+	"EGLL": {
+		"distance": 5540,
+		"demand": {
+			"y": 1341,
+			"j": 217,
+			"f": 98
+		}
+	},
+
+	"KTOL": {
+		"distance": 1516,
+		"demand": {
+			"y": 570,
+			"j": 615,
+			"f": 107
+		}
+	},
+
+	"KCLE": {
+		"distance": 1642,
+		"demand": {
+			"y": 624,
+			"j": 306,
+			"f": 112
+		}
+	},
+
+	"MYAP": {
+		"distance": 2544,
+		"demand": {
+			"y": 280,
+			"j": 259,
+			"f": 119
+		}
+	},
+
+	"KHYA": {
+		"distance": 2548,
+		"demand": {
+			"y": 357,
+			"j": 610,
+			"f": 164
+		}
+	},
+
+	"KEUG": {
+		"distance": 2581,
+		"demand": {
+			"y": 777,
+			"j": 592,
+			"f": 91
+		}
+	},
+
+	"MSLP": {
+		"distance": 2310,
+		"demand": {
+			"y": 1508,
+			"j": 655,
+			"f": 126
+		}
+	},
+
+	"KIAD": {
+		"distance": 1883,
+		"demand": {
+			"y": 1145,
+			"j": 408,
+			"f": 224
+		}
+	},
+
+	"KMPV": {
+		"distance": 1883,
+		"demand": {
+			"y": 617,
+			"j": 316,
+			"f": 223
+		}
+	},
+
+	"CYYZ": {
+		"distance": 1929,
+		"demand": {
+			"y": 1085,
+			"j": 202,
+			"f": 347
+		}
+	},
+
+	"KBOS": {
+		"distance": 2510,
+		"demand": {
+			"y": 1206,
+			"j": 214,
+			"f": 207
+		}
+	},
+
+	"KABQ": {
+		"distance": 914,
+		"demand": {
+			"y": 949,
+			"j": 279,
+			"f": 117
+		}
+	},
+
+	"PAGA": {
+		"distance": 5323,
+		"demand": {
+			"y": 835,
+			"j": 362,
+			"f": 70
+		}
+	},
+
+	"KORD": {
+		"distance": 1291,
+		"demand": {
+			"y": 1195,
+			"j": 215,
+			"f": 354
+		}
+	},
+
+	"BIKF": {
+		"distance": 6012,
+		"demand": {
+			"y": 805,
+			"j": 702,
+			"f": 328
+		}
+	},
+
+	
+
+	"EIDW": {
+		"distance": 7180,
+		"demand": {
+			"y": 2301,
+			"j": 321,
+			"f": 146
+		}
+	},
+
+	"KTUS": {
+		"distance": 1306,
+		"demand": {
+			"y": 730,
+			"j": 325,
+			"f": 263
+		}
+	},
+
+	"KDTW": {
+		"distance": 1587,
+		"demand": {
+			"y": 959,
+			"j": 408,
+			"f": 165
+		}
+	},
+
+	"TKPK": {
+		"distance": 3842,
+		"demand": {
+			"y": 888,
+			"j": 198,
+			"f": 347
+		}
+	},
+
+	"TLPL": {
+		"distance": 4225,
+		"demand": {
+			"y": 1555,
+			"j": 336,
+			"f": 233
+		}
+	},
+
+	"SVMI": {
+		"distance": 3946,
+		"demand": {
+			"y": 1743,
+			"j": 320,
+			"f": 273
+		}
+	},
+
+	"SKYP": {
+		"distance": 3991,
+		"demand": {
+			"y": 794,
+			"j": 287,
+			"f": 62
+		}
+	},
+
+	"KONT": {
+		"distance": 1909,
+		"demand": {
+			"y": 913,
+			"j": 588,
+			"f": 58
+		}
+	},
+
+	"KJLN": {
+		"distance": 527,
+		"demand": {
+			"y": 1304,
+			"j": 313,
+			"f": 77
+		}
+	},
+
+	"KDEN": {
+		"distance": 1033,
+		"demand": {
+			"y": 2018,
+			"j": 231,
+			"f": 138
+		}
+	},
+
+	"KDEC": {
+		"distance": 1063,
+		"demand": {
+			"y": 743,
+			"j": 345,
+			"f": 179
+		}
+	},
+
+	"MMAN": {
+		"distance": 840,
+		"demand": {
+			"y": 513,
+			"j": 502,
+			"f": 164
+		}
+	},
+
+	"KLRU": {
+		"distance": 929,
+		"demand": {
+			"y": 1407,
+			"j": 165,
+			"f": 110
+		}
+	},
+
+	"SPTU": {
+		"distance": 5859,
+		"demand": {
+			"y": 697,
+			"j": 324,
+			"f": 137
+		}
+	},
+
+	"KMSP": {
+		"distance": 1373,
+		"demand": {
+			"y": 764,
+			"j": 523,
+			"f": 81
+		}
+	},
+
+	"KBWI": {
+		"distance": 1955,
+		"demand": {
+			"y": 1061,
+			"j": 210,
+			"f": 208
+		}
+	},
+
+	"KMCO": {
+		"distance": 1583,
+		"demand": {
+			"y": 1385,
+			"j": 380,
+			"f": 260
+		}
+	},
+
+	"KLAX": {
+		"distance": 1984,
+		"demand": {
+			"y": 893,
+			"j": 456,
+			"f": 198
+		}
+	},
+
+	"SLPO": {
+		"distance": 6714,
+		"demand": {
+			"y": 270,
+			"j": 395,
+			"f": 101
+		}
+	},
+	"PANC": {
+		"distance": 4890,
+		"demand": {
+			"y": 609,
+			"j": 495,
+			"f": 68
+		}
+	},
+	"PAKN": {
+		"distance": 5202,
+		"demand": {
+			"y": 748,
+			"j": 323,
+			"f": 188
+		}
+	},
+
+	"SMJP": {
+		"distance": 5294,
+		"demand": {
+			"y": 632,
+			"j": 928,
+			"f": 202
+		}
+	},
+	"CYYT": {
+		"distance": 4032,
+		"demand": {
+			"y": 396,
+			"j": 537,
+			"f": 162
+		}
+	},
+	"YMML": {
+		"distance": 14476,
+		"demand": {
+			"y": 493,
+			"j": 477,
+			"f": 129
+		}
+	},
+	"KMIA": {
+		"distance": 1803,
+		"demand": {
+			"y": 853,
+			"j": 854,
+			"f": 182
+		}
+	},
+	"KSFO": {
+		"distance": 2352,
+		"demand": {
+			"y": 499,
+			"j": 497,
+			"f": 239
+		}
+	},
+	"KSEA": {
+		"distance": 2669,
+		"demand": {
+			"y": 1567,
+			"j": 597,
+			"f": 156
+		}
+	},
+	"KSMF": {
+		"distance": 2299,
+		"demand": {
+			"y": 909,
+			"j": 316,
+			"f": 71
+		}
+	},
+	"KSMF": {
+		"distance": 2299,
+		"demand": {
+			"y": 909,
+			"j": 316,
+			"f": 71
+		}
+	},
+	"KAUS": {
+		"distance": 307,
+		"demand": {
+			"y": 810,
+			"j": 241,
+			"f": 240
+		}
+	}
+}

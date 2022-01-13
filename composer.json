@@ -1,0 +1,14 @@
+{
+    "name": "petenelson/am4",
+    "description": "Airline Manager 4 Utils",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Pete Nelson",
+            "email": "pete@petenelson.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
