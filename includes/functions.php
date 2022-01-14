@@ -123,3 +123,21 @@ function add_seat( $layout, $type ) {
 
 	return $layout;
 }
+
+/**
+ * Calculates the flight time in minutes for a plane on a route.
+ *
+ * @param  array $plane The plane data.
+ * @param  array $route The route data.
+ * @return int
+ */
+function flight_time( $plane, $route ) {
+
+	$distance   = $route['distance'];
+	$speed      = $plane['speed'];
+	$km_per_min = $speed / 60;
+	$minutes    = $distance / $km_per_min;
+	$minutes    = intval( ceil ( $minutes ) );
+
+	return $minutes;
+}
