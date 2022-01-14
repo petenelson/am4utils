@@ -453,8 +453,3 @@ function calculate_layout( $plane, $route, $based_on = 'y' ) {
 
 
 }
-
-
-function add_seat( layout, type ) {
-
-}
