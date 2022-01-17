@@ -20,6 +20,14 @@
 		"name": "Las Vegas Int"
 	},
 
+
+	"EGKK" : {
+		"runway": 10346,
+		"market": 0.35,
+		"country": "United Kingdom",
+		"name": "London Gatwik"
+	},
+
 	"EKCH" : {
 		"runway": 11811,
 		"market": 0.40,
@@ -76,13 +84,27 @@
 		"name": "Seattle Tacoma"
 	},
 
+	"BIVM" : {
+		"runway": 3953,
+		"market": 0.78,
+		"country": "Iceland",
+		"name": "Vestmannaeyjar"
+	},
+
+	"BIIS" : {
+		"runway": 4593,
+		"market": 0.67,
+		"country": "Iceland",
+		"name": "Ísafjörður"
+	},
+
+
 	"BIKF" : {
 		"runway": 10056,
 		"market": 0.58,
 		"country": "Iceland",
 		"name": "Reykjavik - Keflavik"
 	},
-
 
 	"KMPV" : {
 		"runway": 5002,

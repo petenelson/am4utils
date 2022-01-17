@@ -4,11 +4,30 @@ namespace AM4Utils\Tests;
 
 use PHPUnit\Framework\TestCase;
 use function AM4Utils\Functions\add_seat;
+use function AM4Utils\Functions\get_seat_types;
+use function AM4Utils\Functions\get_empty_seat_layout;
 
 /**
  * Seat tests
  */
 class Seat_Tests extends TestCase {
+
+	/**
+	 * Tests the seat types.
+	 *
+	 * @return void
+	 */
+	public function test_get_seat_types() {
+
+		$seat_types = get_seat_types();
+
+		$this->assertIsArray( $seat_types );
+		$this->assertCount( 3, $seat_types );
+
+		$this->assertContains( 'y', $seat_types );
+		$this->assertContains( 'j', $seat_types );
+		$this->assertContains( 'f', $seat_types );
+	}
 
 	/**
 	 * Tests the seat layout.
@@ -22,11 +41,8 @@ class Seat_Tests extends TestCase {
 		];
 
 		// Set an initial layout.
-		$layout = [
-			'y' => $plane['seats'],
-			'j' => 0,
-			'f' => 0,
-		];
+		$layout = get_empty_seat_layout();
+		$layout['y'] = $plane['seats'];
 
 		// Add one j seat.
 		$layout = add_seat( $layout, 'j' );
@@ -37,11 +53,8 @@ class Seat_Tests extends TestCase {
 		$this->assertSame( 1, $layout['j'] );
 		$this->assertSame( 0, $layout['f'] );
 
-		$layout = [
-			'y' => $plane['seats'],
-			'j' => 0,
-			'f' => 0,
-		];
+		$layout = get_empty_seat_layout();
+		$layout['y'] = $plane['seats'];
 
 		// Add 26 j seats.
 		for ( $i = 0; $i < 26; $i++ ) {

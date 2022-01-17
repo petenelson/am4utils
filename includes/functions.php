@@ -125,13 +125,37 @@ function add_seat( $layout, $type ) {
 }
 
 /**
+ * Gets a list of seat types.
+ *
+ * @return array
+ */
+function get_seat_types() {
+	return [ 'y', 'j', 'f' ];
+}
+
+/**
+ * Gets an empty seat layout.
+ *
+ * @return array
+ */
+function get_empty_seat_layout() {
+	$layout = [];
+
+	foreach ( get_seat_types() as $type ) {
+		$layout[ $type ] = 0;
+	}
+
+	return $layout;
+}
+
+/**
  * Calculates the flight time in minutes for a plane on a route.
  *
  * @param  array $plane The plane data.
  * @param  array $route The route data.
  * @return int
  */
-function flight_time( $plane, $route ) {
+function calculate_flight_time( $plane, $route ) {
 
 	$distance   = $route['distance'];
 	$speed      = $plane['speed'];
@@ -140,4 +164,40 @@ function flight_time( $plane, $route ) {
 	$minutes    = intval( ceil ( $minutes ) );
 
 	return $minutes;
+}
+
+/**
+ * Calculates the flights per day.
+ *
+ * @param  array $plane The plane data.
+ * @param  array $route The route data.
+ * @param  int   $day   The hours used for each day, defaults to 16 (playing
+ *                      8am to midnight).
+ * @return int
+ */
+function calculate_flights_per_day( $plane, $route, $day = 16 ) {
+
+	$flights_per_day = ( $day * 60 ) / calculate_flight_time( $plane, $route );
+	$flights_per_day = intval( ceil( $flights_per_day ) );
+
+	return $flights_per_day;
+}
+
+/**
+ * Calculates the demand ratio.
+ *
+ * @param  array $demand Array with y/j/f demand (number of pax).
+ * @return array
+ */
+function calculate_demand_ratio( $demand ) {
+
+	$total_pax = $demand['y'] + $demand['j'] + $demand['f'];
+
+	$ratio = [];
+
+	foreach ( get_seat_types() as $type ) {
+		$ratio[ $type ] = round( $demand[ $type ] / $total_pax, 2 );
+	}
+
+	return $ratio;
 }

@@ -40,6 +40,7 @@ function get_airports() {
  * @return array
  */
 function get_planes() {
+
 	$planes = json_decode( file_get_contents( 'planes.json' ), true );
 
 	if ( empty( $planes ) ) {
