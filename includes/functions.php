@@ -58,7 +58,9 @@ function get_routes() {
 
 	$route_list = [];
 
-	$files = scandir( 'routes' );
+	$route_dir = dirname( dirname( __FILE__ ) ) . '/routes';
+
+	$files = scandir( $route_dir );
 	$airports = get_airports();
 
 	foreach ($files as $filename ) {
@@ -68,7 +70,7 @@ function get_routes() {
 		if ( 'json' === $pathinfo['extension'] ) {
 			$hub = strtoupper( $pathinfo['filename'] );
 
-			$filename = dirname( __FILE__ ) . '/routes/' . $filename;
+			$filename = $route_dir . '/' . $filename;
 
 			$routes = file_get_contents( $filename );
 			$routes = json_decode( $routes, true );
@@ -91,6 +93,40 @@ function get_routes() {
 	}
 
 	return $route_list;
+}
+
+/**
+ * Gets a route.
+ *
+ * @param  string $route The route (ex: KDFW-KIAH)
+ * @return array
+ */
+function get_route( $route ) {
+
+	$routes = get_routes();
+
+	if ( isset( $routes[ $route ] ) ) {
+		return $routes[ $route ];
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Gets a plane.
+ *
+ * @param  string $plane The plane name (ex: B727-800).
+ * @return array
+ */
+function get_plane( $plane ) {
+
+	$planes = get_planes();
+
+	if ( isset( $planes[ $plane ] ) ) {
+		return $planes[ $plane ];
+	} else {
+		return false;
+	}
 }
 
 /**
@@ -200,4 +236,253 @@ function calculate_demand_ratio( $demand ) {
 	}
 
 	return $ratio;
+}
+
+/**
+ * Calculates the initial seat layout for a plane based on the demand ratio.
+ *
+ * @param  array  $demand_ratio The demand ratio.
+ * @param  string $plane        The plane name (ex: B737-800).
+ * @return arrary
+ */
+function calculate_initial_seat_layout( $demand_ratio, $plane ) {
+
+	$debug = true;
+
+	$plane = get_plane( $plane );
+
+	$layout = get_empty_seat_layout();
+
+	// Allocate all of the initial seats to y.
+	$layout['y'] = $plane['seats'];
+
+	return $layout;
+}
+
+/**
+ * Calculates the pax per day based on the layout and the number of planes.
+ *
+ * @param  int   $flights_per_day Number of flights per day.
+ * @param  array $layout          The seat layout.
+ * @param  float $num_planes      The number of plans.
+ * @return array
+ */
+function calculate_pax_per_day( $flights_per_day, $layout, $num_planes ) {
+
+	$pax_per_day = [
+		'y' => $layout['y'] * ceil( $flights_per_day * $num_planes ),
+		'j' => $layout['j'] * ceil( $flights_per_day * $num_planes ),
+		'f' => $layout['f'] * ceil( $flights_per_day * $num_planes ),
+	];
+
+	return $pax_per_day;
+}
+
+/**
+ * Calculates if the pax per day meets the demand.
+ *
+ * @param array $pax_per_day List of pax per day.
+ * @param array $demand      List of pax demand.
+ * @return array
+ */
+function calculate_meets_demand( $pax_per_day, $demand ) {
+
+	$meets_demand = [];
+	$all_met      = true;
+
+	foreach( get_seat_types() as $seat_type ) {
+		$all_met = $pax_per_day[ $seat_type ] >= $demand[ $seat_type ];
+
+		$meets_demand[ $seat_type ] = $all_met;
+	}
+
+	$meets_demand['all'] = $all_met;
+
+	return $meets_demand;
+}
+
+/**
+ * Calculates the number of f seats available.
+ *
+ * @param  int   $num_seats The total number of seats.
+ * @param  array $layout    The modified seat layout.
+ * @return int
+ */
+function calculate_f_seats_available( $num_seats, $layout ) {
+
+	$seats_available = $num_seats - $layout['y'] - ( $layout['j'] * 2 );
+	$seats_available = intval( floor( $seats_available / 3 ) );
+
+	return $seats_available;
+}
+
+/**
+ * Calculates all possible seat layouts.
+ *
+ * @param  int $num_seats The number of seats.
+ * @return array
+ */
+function calculate_all_seat_layouts( $num_seats ) {
+
+	$layouts = [];
+	$layout  = get_empty_seat_layout();
+
+	$layout['y'] = $num_seats;
+
+	// Make a list of possible y/j combos.
+	$y_seats = $num_seats;
+	$j_seats = 0;
+
+	while ( $y_seats >= 0 ) {
+
+		$layout = [
+			'y' => $y_seats,
+			'j' => $j_seats,
+			'f' => 0,
+		];
+
+		$layouts[]     = $layout;
+		$y_j_layouts[] = $layout;
+
+		$y_seats--;
+
+		$j_seats = floor( ( $num_seats - $y_seats ) / 2 );
+
+	}
+
+	foreach ( array_reverse( $layouts ) as $y_j_layout ) {
+
+		while ( $y_j_layout['j'] >= 0 ) {
+
+			$y_j_layout['j']--;
+
+			if ( $y_j_layout['j'] >= 0 ) {
+
+				$f_seats_available = calculate_f_seats_available( $num_seats, $y_j_layout );
+				if ( $f_seats_available > 0 ) {
+
+					$f_layout = [
+						'y' => $y_j_layout['y'],
+						'j' => $y_j_layout['j'],
+						'f' => $f_seats_available,
+					];
+
+					$layouts[] = $f_layout;
+				}
+			}
+		}
+	}
+
+	return $layouts;
+}
+
+/**
+ * Calculates the number of planes required, based on the route's demand.
+ *
+ * @param  string $route_name The route name (ex: KDFW-KIAH).
+ * @param  string $plane_name The plane name( ex: B727-800).
+ * @return array
+ */
+function calculate_planes_required( $route_name, $plane_name ) {
+
+	$debug = true;
+
+	$route = get_route( $route_name );
+	$plane = get_plane( $plane_name );
+
+	$max_planes = 10;
+
+	$demand_ratio = calculate_demand_ratio( $route['demand'] );
+	$layout       = calculate_initial_seat_layout( $demand_ratio, $plane_name );
+
+	$results = [
+		'required'        => 0,
+		'route'           => $route_name,
+		'demand'          => $route['demand'],
+		'plane'           => $plane_name,
+		'flights_per_day' => calculate_flights_per_day( $plane, $route ),
+		'ratio'           => $demand_ratio,
+		'layout'          => $layout,
+	];
+
+	$meets_demand = [
+		'y'   => false,
+		'j'   => false,
+		'f'   => false,
+		'all' => false,
+	];
+
+	$flights_per_day = $results['flights_per_day'];
+	$demand          = $route['demand'];
+
+	// Base number of planes to start with.
+	$num_planes = 0.8;
+	$plane_incr = 0.01;
+
+	$all_layouts = [];
+
+	while ( $num_planes <= 1000 || ! $meets_demand['all'] ) {
+
+		$pax_per_day = calculate_pax_per_day( $flights_per_day, $layout, $num_planes );
+
+		// Does this layout meet demand?
+		$meets_demand = calculate_meets_demand( $pax_per_day, $demand );
+
+		if ( $debug ) {
+			echo_line(
+				sprintf(
+					'Required %s, Layout %s/%s/%s, Pax %s/%s/%s, Demand %s/%s/%s, Meets %s/%s/%s/%s',
+					number_format( $num_planes, 2 ),
+					$layout['y'],
+					$layout['j'],
+					$layout['f'],
+
+					$pax_per_day['y'],
+					$pax_per_day['j'],
+					$pax_per_day['f'],
+					$demand['y'],
+					$demand['j'],
+					$demand['f'],
+					$meets_demand['y'] ? 'Yes' : 'No',
+					$meets_demand['j'] ? 'Yes' : 'No',
+					$meets_demand['f'] ? 'Yes' : 'No',
+					$meets_demand['all'] ? 'Yes' : 'No',
+				)
+			);
+		}
+
+		die('sfgsdfg');
+
+	}
+
+	$results['layout'] = $layout;
+
+	return $results;
+}
+
+function echo_line( $line ) {
+	echo $line . PHP_EOL; // phpcs:ignore
+}
+
+function echo_debug( $num_planes, $layout, $pax_per_day, $demand, $meets_demand ) {
+	echo_line(
+		sprintf(
+			'Required %s, Layout %s/%s/%s, Pax %s/%s/%s, Demand %s/%s/%s, Meets %s/%s/%s/%s',
+			number_format( $num_planes, 2 ),
+			$layout['y'],
+			$layout['j'],
+			$layout['f'],
+
+			$pax_per_day['y'],
+			$pax_per_day['j'],
+			$pax_per_day['f'],
+			$demand['y'],
+			$demand['j'],
+			$demand['f'],
+			$meets_demand['y'] ? 'Yes' : 'No',
+			$meets_demand['j'] ? 'Yes' : 'No',
+			$meets_demand['f'] ? 'Yes' : 'No',
+			$meets_demand['all'] ? 'Yes' : 'No',
+		)
+	);
 }
