@@ -98,12 +98,25 @@
 		"name": "Ísafjörður"
 	},
 
+	"KTUS" : {
+		"runway": 10056,
+		"market": 0.58,
+		"country": "Iceland",
+		"name": "Reykjavik - Keflavik"
+	},
 
 	"BIKF" : {
 		"runway": 10056,
 		"market": 0.58,
 		"country": "Iceland",
 		"name": "Reykjavik - Keflavik"
+	},
+
+	"KMSP" : {
+		"runway": 11106,
+		"market": 0.38,
+		"country": "United States",
+		"name": "Minneapolis"
 	},
 
 	"KMPV" : {

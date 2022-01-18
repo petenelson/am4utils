@@ -213,7 +213,12 @@ function calculate_flight_time( $plane, $route ) {
  */
 function calculate_flights_per_day( $plane, $route, $day = 16 ) {
 
-	$flights_per_day = ( $day * 60 ) / calculate_flight_time( $plane, $route );
+	$flight_time = calculate_flight_time( $plane, $route );
+	if ( empty( $flight_time ) ) {
+		var_dump( $plane, $route ); die();
+	}
+
+	$flights_per_day = ( $day * 60 ) / $flight_time;
 	$flights_per_day = intval( ceil( $flights_per_day ) );
 
 	return $flights_per_day;
@@ -267,12 +272,12 @@ function calculate_initial_seat_layout( $demand_ratio, $plane ) {
  * @param  float $num_planes      The number of plans.
  * @return array
  */
-function calculate_pax_per_day( $flights_per_day, $layout, $num_planes ) {
+function calculate_pax_per_day( $flights_per_day, $layout, $num_planes, $pax_adjust = 1 ) {
 
 	$pax_per_day = [
-		'y' => $layout['y'] * ceil( $flights_per_day * $num_planes ),
-		'j' => $layout['j'] * ceil( $flights_per_day * $num_planes ),
-		'f' => $layout['f'] * ceil( $flights_per_day * $num_planes ),
+		'y' => $layout['y'] * ceil( $flights_per_day * $num_planes * $pax_adjust ),
+		'j' => $layout['j'] * ceil( $flights_per_day * $num_planes * $pax_adjust ),
+		'f' => $layout['f'] * ceil( $flights_per_day * $num_planes * $pax_adjust ),
 	];
 
 	return $pax_per_day;
@@ -291,9 +296,11 @@ function calculate_meets_demand( $pax_per_day, $demand ) {
 	$all_met      = true;
 
 	foreach( get_seat_types() as $seat_type ) {
-		$all_met = $pax_per_day[ $seat_type ] >= $demand[ $seat_type ];
+		$meets_demand[ $seat_type ] = $pax_per_day[ $seat_type ] >= $demand[ $seat_type ];
 
-		$meets_demand[ $seat_type ] = $all_met;
+		if ( ! $meets_demand[ $seat_type ] ) {
+			$all_met = false;
+		}
 	}
 
 	$meets_demand['all'] = $all_met;
@@ -383,14 +390,32 @@ function calculate_all_seat_layouts( $num_seats ) {
  * @param  string $plane_name The plane name( ex: B727-800).
  * @return array
  */
-function calculate_planes_required( $route_name, $plane_name ) {
+function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) {
 
-	$debug = true;
+	$debug      = false;
+	$max_planes = 6.2;
+
+	$additonal_cache_keys = [
+		strval( $pax_adjust ),
+	];
+
+	$cache_key = "{$route_name}:{$plane_name}:" . md5( json_encode( $additonal_cache_keys ) );
+	$cache_dir = dirname( dirname( __FILE__ )  ) . '/.cache';
+
+	if ( ! file_exists( $cache_dir ) ) {
+		mkdir( $cache_dir ); // phpcs:ignore
+	}
+
+	$cache_file = $cache_dir . '/' . $cache_key . '.json';
+
+	if ( file_exists( $cache_file ) ) {
+		$results = file_get_contents( $cache_file );
+		$results = json_decode( $results, true );
+		return $results;
+	}
 
 	$route = get_route( $route_name );
 	$plane = get_plane( $plane_name );
-
-	$max_planes = 10;
 
 	$demand_ratio = calculate_demand_ratio( $route['demand'] );
 	$layout       = calculate_initial_seat_layout( $demand_ratio, $plane_name );
@@ -401,6 +426,7 @@ function calculate_planes_required( $route_name, $plane_name ) {
 		'demand'          => $route['demand'],
 		'plane'           => $plane_name,
 		'flights_per_day' => calculate_flights_per_day( $plane, $route ),
+		'pax_per_day'     => get_empty_seat_layout(),
 		'ratio'           => $demand_ratio,
 		'layout'          => $layout,
 	];
@@ -416,58 +442,52 @@ function calculate_planes_required( $route_name, $plane_name ) {
 	$demand          = $route['demand'];
 
 	// Base number of planes to start with.
-	$num_planes = 0.8;
+	$num_planes = 0.9;
 	$plane_incr = 0.01;
+	$loop       = 0;
 
-	$all_layouts = [];
+	$all_layouts = calculate_all_seat_layouts( $plane['seats'] );
 
-	while ( $num_planes <= 1000 || ! $meets_demand['all'] ) {
+	while ( $num_planes <= $max_planes || ! $meets_demand['all'] ) {
 
-		$pax_per_day = calculate_pax_per_day( $flights_per_day, $layout, $num_planes );
+		foreach ( $all_layouts as $layout ) {
 
-		// Does this layout meet demand?
-		$meets_demand = calculate_meets_demand( $pax_per_day, $demand );
+			$pax_per_day = calculate_pax_per_day( $flights_per_day, $layout, $num_planes, $pax_adjust );
 
-		if ( $debug ) {
-			echo_line(
-				sprintf(
-					'Required %s, Layout %s/%s/%s, Pax %s/%s/%s, Demand %s/%s/%s, Meets %s/%s/%s/%s',
-					number_format( $num_planes, 2 ),
-					$layout['y'],
-					$layout['j'],
-					$layout['f'],
+			$results['pax_per_day'] = $pax_per_day;
 
-					$pax_per_day['y'],
-					$pax_per_day['j'],
-					$pax_per_day['f'],
-					$demand['y'],
-					$demand['j'],
-					$demand['f'],
-					$meets_demand['y'] ? 'Yes' : 'No',
-					$meets_demand['j'] ? 'Yes' : 'No',
-					$meets_demand['f'] ? 'Yes' : 'No',
-					$meets_demand['all'] ? 'Yes' : 'No',
-				)
-			);
+			// Does this layout meet demand?
+			$meets_demand = calculate_meets_demand( $pax_per_day, $demand );
+
+			if ( $debug ) {
+				echo_debug( $plane_name, $num_planes, $layout, $pax_per_day, $demand, $meets_demand );
+			}
+
+			if ( $meets_demand['all'] ) {
+				break;
+			}
 		}
 
-		die('sfgsdfg');
+		if ( $meets_demand['all'] ) {
+			$results['required'] = $num_planes;
+			break;
+		}
 
+		$num_planes = $num_planes + $plane_incr;
 	}
 
-	$results['layout'] = $layout;
+	$results['layout']       = $layout;
+	$results['meets_demand'] = $meets_demand;
+
+	file_put_contents( $cache_file, json_encode( $results, JSON_PRETTY_PRINT ) );
 
 	return $results;
 }
 
-function echo_line( $line ) {
-	echo $line . PHP_EOL; // phpcs:ignore
-}
-
-function echo_debug( $num_planes, $layout, $pax_per_day, $demand, $meets_demand ) {
-	echo_line(
-		sprintf(
-			'Required %s, Layout %s/%s/%s, Pax %s/%s/%s, Demand %s/%s/%s, Meets %s/%s/%s/%s',
+function echo_debug( $plane_name, $num_planes, $layout, $pax_per_day, $demand, $meets_demand ) {
+	$line = sprintf(
+			'%s, Required %s, Layout %s/%s/%s, Pax %s/%s/%s, Demand %s/%s/%s, Meets %s/%s/%s/%s',
+			$plane_name,
 			number_format( $num_planes, 2 ),
 			$layout['y'],
 			$layout['j'],
@@ -483,6 +503,8 @@ function echo_debug( $num_planes, $layout, $pax_per_day, $demand, $meets_demand 
 			$meets_demand['j'] ? 'Yes' : 'No',
 			$meets_demand['f'] ? 'Yes' : 'No',
 			$meets_demand['all'] ? 'Yes' : 'No',
-		)
-	);
+		);
+
+	echo $line; // phpcs:ignore
+	echo PHP_EOL;
 }

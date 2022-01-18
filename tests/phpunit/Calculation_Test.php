@@ -26,16 +26,11 @@ class Calculation_Tests extends TestCase {
 	 */
 	public function test_calculate_planes_required() {
 
-		$this->assertTrue( true ); // TODO.
-		return;
-
-
 		$route_name = 'KDFW-KSEA';
 		$plane_name = 'ERJ 190-200';
 
 		$planes_required = calculate_planes_required( $route_name, $plane_name );
-
-		// var_dump( $planes_required );
+		var_dump( $planes_required ); die();
 
 		$this->assertIsArray( $planes_required );
 		$this->assertSame( 'KDFW-KSEA', $planes_required['route'] );
@@ -43,12 +38,6 @@ class Calculation_Tests extends TestCase {
 		$this->assertSame( 1567, $planes_required['demand']['y'] );
 		$this->assertSame( 597, $planes_required['demand']['j'] );
 		$this->assertSame( 156, $planes_required['demand']['f'] );
-
-
-
-
-
-
 
 	}
 
