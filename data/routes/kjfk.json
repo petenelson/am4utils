@@ -26,6 +26,24 @@
 		}
 	},
 
+	"EDDM": {
+		"distance": 6482,
+		"demand": {
+			"y": 897,
+			"j": 539,
+			"f": 141
+		}
+	},
+
+	"KMCO": {
+		"distance": 1522,
+		"demand": {
+			"y": 493,
+			"j": 642,
+			"f": 146
+		}
+	},
+
 	"KABQ": {
 		"distance": 2932,
 		"demand": {
@@ -91,12 +109,97 @@
 		}
 	},
 
+	"CYWG": {
+		"distance": 2093,
+		"demand": {
+			"y": 397,
+			"j": 394,
+			"f": 75
+		}
+	},
+
+
+	"ENGM": {
+		"distance": 5918,
+		"demand": {
+			"y": 1099,
+			"j": 707,
+			"f": 234
+		}
+	},
+
+
+	"EKCH": {
+		"distance": 6189,
+		"demand": {
+			"y": 794,
+			"j": 765,
+			"f": 226
+		}
+	},
+
+	"KSTP": {
+		"distance": 1640,
+		"demand": {
+			"y": 728,
+			"j": 578,
+			"f": 61
+		}
+	},
+
+	"KORD": {
+		"distance": 1188,
+		"demand": {
+			"y": 940,
+			"j": 556,
+			"f": 141
+		}
+	},
+
+	"PHNL": {
+		"distance": 8007,
+		"demand": {
+			"y": 776,
+			"j": 322,
+			"f": 220
+		}
+	},
+
+	"KCLE": {
+		"distance": 683,
+		"demand": {
+			"y": 908,
+			"j": 313,
+			"f": 163
+		}
+	},
+
 	"KBOS": {
 		"distance": 301,
 		"demand": {
 			"y": 533,
 			"j": 285,
 			"f": 245
+		}
+	},
+
+	"BIEG": {
+		"distance": 4574,
+		"demand": {
+			"y": 306,
+			"j": 260,
+			"f": 65
+		}
+	},
+
+
+
+	"CYYC": {
+		"distance": 4164,
+		"demand": {
+			"y": 936,
+			"j": 465,
+			"f": 217
 		}
 	},
 

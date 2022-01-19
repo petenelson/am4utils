@@ -3,12 +3,24 @@
 namespace AM4Utils\Functions;
 
 /**
+ * Gets the contents of a file.
+ *
+ * @param  string $filename The file name.
+ * @return string
+ */
+function get_file_contents( $filename ) {
+	$dir = dirname( dirname( __FILE__ ) );
+	$file = $dir . '/data/' . $filename;
+	return file_get_contents( $file );
+}
+
+/**
  * Gets a list of airports.
  *
  * @return array
  */
 function get_airports() {
-	$airports = json_decode( file_get_contents( 'airports.json' ), true );
+	$airports = json_decode( get_file_contents( 'airports.json' ), true );
 
 	foreach ( array_keys( $airports ) as $key ) {
 		if ( ! isset( $airports[ $key ]['runway'] ) ) {
@@ -25,7 +37,7 @@ function get_airports() {
  * @return array
  */
 function get_planes() {
-	$planes = json_decode( file_get_contents( 'planes.json' ), true );
+	$planes = json_decode( get_file_contents( 'planes.json' ), true );
 
 	if ( empty( $planes ) ) {
 		var_dump( 'Planes file is broken.' ); die();
@@ -58,7 +70,7 @@ function get_routes() {
 
 	$route_list = [];
 
-	$route_dir = dirname( dirname( __FILE__ ) ) . '/routes';
+	$route_dir = dirname( dirname( __FILE__ ) ) . '/data/routes';
 
 	$files = scandir( $route_dir );
 	$airports = get_airports();
@@ -252,10 +264,7 @@ function calculate_demand_ratio( $demand ) {
  */
 function calculate_initial_seat_layout( $demand_ratio, $plane ) {
 
-	$debug = true;
-
-	$plane = get_plane( $plane );
-
+	$plane  = get_plane( $plane );
 	$layout = get_empty_seat_layout();
 
 	// Allocate all of the initial seats to y.
@@ -296,7 +305,13 @@ function calculate_meets_demand( $pax_per_day, $demand ) {
 	$all_met      = true;
 
 	foreach( get_seat_types() as $seat_type ) {
-		$meets_demand[ $seat_type ] = $pax_per_day[ $seat_type ] >= $demand[ $seat_type ];
+
+		$demand_plus_buffer = $demand[ $seat_type ] * 1.15;
+
+		$within_range = $pax_per_day[ $seat_type ] >= $demand[ $seat_type ] && // meets base demand
+			$pax_per_day[ $seat_type ] <= $demand_plus_buffer;
+
+		$meets_demand[ $seat_type ] = $within_range;
 
 		if ( ! $meets_demand[ $seat_type ] ) {
 			$all_met = false;
@@ -448,7 +463,7 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 
 	$all_layouts = calculate_all_seat_layouts( $plane['seats'] );
 
-	while ( $num_planes <= $max_planes || ! $meets_demand['all'] ) {
+	while ( $num_planes <= $max_planes ) {
 
 		foreach ( $all_layouts as $layout ) {
 
@@ -474,6 +489,18 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 		}
 
 		$num_planes = $num_planes + $plane_incr;
+
+		if ( $num_planes > 1.1 && $num_planes < 1.9 ) {
+			$num_planes  = 1.9;
+		} else if ( $num_planes > 2.1 && $num_planes < 2.9 ) {
+			$num_planes  = 2.9;
+		} else if ( $num_planes > 3.1 && $num_planes < 3.9 ) {
+			$num_planes  = 3.9;
+		} else if ( $num_planes > 4.1 && $num_planes < 4.9 ) {
+			$num_planes  = 4.9;
+		} else if ( $num_planes > 5.1 && $num_planes < 5.9 ) {
+			$num_planes  = 5.9;
+		}
 	}
 
 	$results['layout']       = $layout;

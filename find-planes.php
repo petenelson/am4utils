@@ -37,6 +37,7 @@ if ( ! isset( $routes[ $route ] ) ) {
 }
 
 $distance = $routes[ $route ]['distance'];
+$demand   = $routes[ $route ]['demand'];
 $runway   = 0;
 
 $hub_destionation = explode( '-', $route );
@@ -48,30 +49,59 @@ echo sprintf( 'Distance: %s', $distance ); // phpcs:ignore
 echo PHP_EOL;
 echo sprintf( 'Runway: %s', $runway ); // phpcs:ignore
 echo PHP_EOL;
+echo sprintf( 'Demand: %s/%s/%s', $demand['y'], $demand['j'], $demand['f'] ); // phpcs:ignore
+echo PHP_EOL;
 echo '******';
 echo PHP_EOL;
 
+$initial_plane_keys = [];
+
 if ( ! empty( $plane_filter ) ) {
-	$plane_keys = [ $plane_filter ];
+	$initial_plane_keys = [ $plane_filter ];
+
+	if ( 'COMMON' === $plane_filter ) {
+		$initial_plane_keys = [
+			'MC-21-300',
+			'MC-21-400',
+			'B747SP',
+			'B747-8',
+			'B737-800',
+			'DC-10-10',
+			'MD-88',
+			'MD-81',
+			'MD-11',
+			'A320-200',
+			'A220-100',
+			'A380-800',
+			'CRJ 100',
+			'CRJ 1000',
+			'B727-100',
+			'B727-200',
+			'F28-6000',
+		];
+
+		$plane_filter = false;
+	}
 } else {
+	$initial_plane_keys = array_keys( $planes );
+}
 
-	foreach ( array_keys( $planes ) as $plane_key ) {
+foreach ( $initial_plane_keys as $plane_key ) {
 
-		$range        = $planes[ $plane_key ]['range'];
-		$plane_runway = $planes[ $plane_key ]['runway'];
+	$range        = $planes[ $plane_key ]['range'];
+	$plane_runway = $planes[ $plane_key ]['runway'];
 
-		$can_add = $distance <= $range;
+	$can_add = $distance <= $range;
 
-		if ( ! empty( $runway ) && ! empty( $plane_runway ) && $plane_runway > $runway ) {
-			$can_add = false;
-		}
-
-		if ( $can_add ) {
-			$plane_keys[] = $plane_key;
-		}
+	if ( ! empty( $runway ) && ! empty( $plane_runway ) && $plane_runway > $runway ) {
+		$can_add = false;
 	}
 
+	if ( $can_add ) {
+		$plane_keys[] = $plane_key;
+	}
 }
+
 
 $pax_adjust = 0.88;
 
@@ -88,11 +118,11 @@ foreach ( $plane_keys as $plane ) {
 		$required = $results['required'];
 
 		if ( empty( $plane_filter ) ) {
-			if ( $required > 5.1 ) {
+			if ( $required > 6.1 ) {
 				$results = false;
 			}
 
-			if ( $required < 0.95  ) {
+			if ( $required < 0.9  ) {
 				$results = false;
 			}
 
@@ -143,6 +173,8 @@ foreach ( $plane_keys as $plane ) {
 		}
 	);
 }
+
+echo PHP_EOL;
 
 foreach ( $list as $plane => $data ) {
 

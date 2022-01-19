@@ -1,0 +1,463 @@
+{
+	"EGLL" : {
+		"runway": 12799,
+		"market": 0.49,
+		"country": "United Kingdon",
+		"name": "London Heathrow"
+	},
+
+	"KGCN" : {
+		"runway": 8999,
+		"market": 0.61,
+		"country": "United States",
+		"name": "Grand Canyon"
+	},
+
+	"KLAS" : {
+		"runway": 14510,
+		"market": 0.78,
+		"country": "United States",
+		"name": "Las Vegas Int"
+	},
+
+	"KABQ" : {
+		"runway": 13793,
+		"market": 0.78,
+		"country": "United States",
+		"name": "Albuquerque"
+	},
+
+	"KHIO" : {
+		"runway": 6600,
+		"market": 0.63,
+		"country": "United States",
+		"name": "Portland Hillsboro"
+	},
+
+	"KDSM" : {
+		"runway": 9003,
+		"market": 0.39,
+		"country": "United States",
+		"name": "Des Moines"
+	},
+
+	"KDET" : {
+		"runway": 5090,
+		"market": 0.53,
+		"country": "United States",
+		"name": "Detroit C.A. Young"
+	},
+
+	"KAUS" : {
+		"runway": 12248,
+		"market": 0.56,
+		"country": "United States",
+		"name": "Austin"
+	},
+
+	"KHYA" : {
+		"runway": 5425,
+		"market": 0.62,
+		"country": "United States",
+		"name": "Hyannis"
+	},
+
+	"KORD" : {
+		"runway": 13000,
+		"market": 0.53,
+		"country": "United States",
+		"name": "Chicago O'Hare"
+	},
+
+	
+
+	"KIAD" : {
+		"runway": 11501,
+		"market": 0.77,
+		"country": "United States",
+		"name": "Washington Dulles"
+	},
+
+	"KONT" : {
+		"runway": 12198,
+		"market": 0.65,
+		"country": "United States",
+		"name": "Ontario"
+	},
+
+	"KDTW" : {
+		"runway": 12003,
+		"market": 0.89,
+		"country": "United States",
+		"name": "Detroit Metrop"
+	},
+
+
+	"PAGA" : {
+		"runway": 7254,
+		"market": 0.51,
+		"country": "United States",
+		"name": "Galena"
+	},
+
+	"KEUG" : {
+		"runway": 8009,
+		"market": 0.74,
+		"country": "United States",
+		"name": "Eugene"
+	},
+
+	"KSTP" : {
+		"runway": 6711,
+		"market": 0.57,
+		"country": "United States",
+		"name": "St Paul"
+	},
+
+	"KDEC" : {
+		"runway": 8496,
+		"market": 0.77,
+		"country": "United States",
+		"name": "Decatur"
+	},
+
+	"KMCK" : {
+		"runway": 6449,
+		"market": 0.79,
+		"country": "United States",
+		"name": "Mc Cook"
+	},
+
+	"CYWG" : {
+		"runway": 11000,
+		"market": 0.35,
+		"country": "Canada",
+		"name": "Winnipeg"
+	},
+
+	"KLAX" : {
+		"runway": 12091,
+		"market": 0.84,
+		"country": "United States",
+		"name": "Los Angeles"
+	},
+
+
+
+	"PHNL" : {
+		"runway": 12300,
+		"market": 0.51,
+		"country": "United States",
+		"name": "Honolulu"
+	},
+
+	"KCLE" : {
+		"runway": 9000,
+		"market": 0.67,
+		"country": "United States",
+		"name": "Cleveland Int"
+	},
+
+	"KIAH" : {
+		"runway": 12001,
+		"market": 0.52,
+		"country": "United States",
+		"name": "Houston"
+	},
+
+	"EDMA" : {
+		"runway": 5230,
+		"market": 0.80,
+		"country": "Germany",
+		"name": "Augsburg"
+	},
+
+
+	"EGKK" : {
+		"runway": 10346,
+		"market": 0.35,
+		"country": "United Kingdom",
+		"name": "London Gatwik"
+	},
+
+	"KBOS" : {
+		"runway": 10083,
+		"market": 0.74,
+		"country": "United States",
+		"name": "Boston"
+	},
+
+	"EDAH" : {
+		"runway": 7562,
+		"market": 0.87,
+		"country": "Germany",
+		"name": "Heringsdorf"
+	},
+
+	"BIEG" : {
+		"runway": 6562,
+		"market": 0.34,
+		"country": "Iceland",
+		"name": "Egilsstaðir"
+	},
+
+	"KSFO" : {
+		"runway": 11870,
+		"market": 0.86,
+		"country": "United States",
+		"name": "San Francisco"
+	},
+
+	"KOAK" : {
+		"runway": 10000,
+		"market": 0.73,
+		"country": "United States",
+		"name": "Oakland"
+	},
+
+	"KOAK" : {
+		"runway": 10000,
+		"market": 0.73,
+		"country": "United States",
+		"name": "Oakland"
+	},
+
+	"KDEN" : {
+		"runway": 16000,
+		"market": 0.39,
+		"country": "United States",
+		"name": "Denver Int"
+	},
+
+
+
+
+	"KMCO" : {
+		"runway": 12005,
+		"market": 0.62,
+		"country": "United States",
+		"name": "Orlando Int"
+	},
+
+	"CYPD" : {
+		"runway": 5000,
+		"market": 0.39,
+		"country": "Canada",
+		"name": "Port Hawkesbury"
+	},
+
+
+	"KMIA" : {
+		"runway": 13000,
+		"market": 0.58,
+		"country": "United States",
+		"name": "Miami Int"
+	},
+
+
+
+	"CYDP" : {
+		"runway": 2000,
+		"market": 0.66,
+		"country": "Canada",
+		"name": "Nain"
+	},
+
+	"KMWH" : {
+		"runway": 13503,
+		"market": 0.79,
+		"country": "United States",
+		"name": "Moses Lake"
+	},
+
+
+	"CYSU" : {
+		"runway": 8000,
+		"market": 0.81,
+		"country": "Canada",
+		"name": "Summerside"
+	},
+
+
+
+	"YMML" : {
+		"runway": 11998,
+		"market": 0.78,
+		"country": "Australia",
+		"name": "Melbourne Int"
+	},
+
+	"CYYC" : {
+		"runway": 14000,
+		"market": 0.65,
+		"country": "Canada",
+		"name": "Calgary"
+	},
+
+	"CYYZ" : {
+		"runway": 11120,
+		"market": 0.31,
+		"country": "Canada",
+		"name": "Toronto Intl"
+	},
+
+
+	"EKCH" : {
+		"runway": 11811,
+		"market": 0.40,
+		"country": "Denmark",
+		"name": "Copenhagen"
+	},
+
+	"CYCA" : {
+		"runway": 2500,
+		"market": 0.43,
+		"country": "Canada",
+		"name": "Cartwright"
+	},
+
+
+
+	"EDDM" : {
+		"runway": 13123,
+		"market": 0.74,
+		"country": "Germany",
+		"name": "Munich"
+	},
+
+
+	"ENGM" : {
+		"runway": 11811,
+		"market": 0.38,
+		"country": "Norway",
+		"name": "Oslo"
+	},
+
+	"KATL" : {
+		"runway": 11890,
+		"market": 0.61,
+		"country": "United States",
+		"name": "Atlanta Int"
+	},
+
+	"LGAV" : {
+		"runway": 13123,
+		"market": 0.4
+	},
+
+
+
+	"KTOL" : {
+		"runway": 10600,
+		"market": 0.65,
+		"country": "United States",
+		"name": "Toledo"
+	},
+
+	"KRNO" : {
+		"runway": 11002,
+		"market": 0.33,
+		"country": "United States",
+		"name": "Reno"
+	},
+
+	"KISO" : {
+		"runway": 11500,
+		"market": 0.86,
+		"country": "United States",
+		"name": "Kinston"
+	},
+
+	"EKCH" : {
+		"runway": 11811,
+		"market": 0.4,
+		"country": "Denmark",
+		"name": "Copenhagen"
+	},
+
+	"KKLS" : {
+		"runway": 4319,
+		"market": 0.5,
+		"country": "United States",
+		"name": "Kelso"
+	},
+
+
+
+	"EIDW" : {
+		"runway": 8652,
+		"market": 0.77,
+		"country": "Ireland",
+		"name": "Dublin"
+	},
+
+	"EINN" : {
+		"runway": 10495,
+		"market": 0.57,
+		"country": "Ireland",
+		"name": "Shannon"
+	},
+
+	"KSEA" : {
+		"runway": 11900,
+		"market": 0.45,
+		"country": "United States",
+		"name": "Seattle Tacoma"
+	},
+
+	"BIVM" : {
+		"runway": 3953,
+		"market": 0.78,
+		"country": "Iceland",
+		"name": "Vestmannaeyjar"
+	},
+
+	"BIIS" : {
+		"runway": 4593,
+		"market": 0.67,
+		"country": "Iceland",
+		"name": "Ísafjörður"
+	},
+
+	"KTUS" : {
+		"runway": 10056,
+		"market": 0.58,
+		"country": "Iceland",
+		"name": "Reykjavik - Keflavik"
+	},
+
+	"BIKF" : {
+		"runway": 10056,
+		"market": 0.58,
+		"country": "Iceland",
+		"name": "Reykjavik - Keflavik"
+	},
+
+	"KMSP" : {
+		"runway": 11106,
+		"market": 0.38,
+		"country": "United States",
+		"name": "Minneapolis"
+	},
+
+	"KMPV" : {
+		"runway": 5002,
+		"market": 0.60,
+		"country": "United States",
+		"name": "Barre Montpelier"
+	},
+
+	"KJFK" : {
+		"runway": 14572,
+		"market": 0.79,
+		"country": "United States",
+		"name": "New York JFK"
+	},
+
+
+	"KSTL" : {
+		"runway": 11019,
+		"market": 0.54
+	}
+
+}
