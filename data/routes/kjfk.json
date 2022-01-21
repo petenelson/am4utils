@@ -17,6 +17,107 @@
 		}
 	},
 
+	"KPDX": {
+		"distance": 3939,
+		"demand": {
+			"y": 397,
+			"j": 453,
+			"f": 78
+		}
+	},
+
+
+	"TLPL": {
+		"distance": 3242,
+		"demand": {
+			"y": 1016,
+			"j": 732,
+			"f": 191
+		}
+	},
+
+	"CYEV": {
+		"distance": 4637,
+		"demand": {
+			"y": 517,
+			"j": 289,
+			"f": 219
+		}
+	},
+
+	"CZGI": {
+		"distance": 2175,
+		"demand": {
+			"y": 687,
+			"j": 214,
+			"f": 61
+		}
+	},
+
+	"SKMD": {
+		"distance": 3832,
+		"demand": {
+			"y": 798,
+			"j": 190,
+			"f": 114
+		}
+	},
+
+	"TAPA": {
+		"distance": 2856,
+		"demand": {
+			"y": 522,
+			"j": 837,
+			"f": 230
+		}
+	},
+
+	"MYAP": {
+		"distance": 2024,
+		"demand": {
+			"y": 487,
+			"j": 150,
+			"f": 95
+		}
+	},
+
+	"MKJP": {
+		"distance": 2541,
+		"demand": {
+			"y": 1284,
+			"j": 862,
+			"f": 82
+		}
+	},
+
+	"VLVT": {
+		"distance": 13986,
+		"demand": {
+			"y": 844,
+			"j": 595,
+			"f": 204
+		}
+	},
+
+	"PADQ": {
+		"distance": 5665,
+		"demand": {
+			"y": 308,
+			"j": 512,
+			"f": 126
+		}
+	},
+
+	"KMLU": {
+		"distance": 1859,
+		"demand": {
+			"y": 558,
+			"j": 353,
+			"f": 80
+		}
+	},
+
+
 	"KMPV": {
 		"distance": 409,
 		"demand": {

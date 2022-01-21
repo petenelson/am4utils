@@ -128,6 +128,206 @@
 		"name": "Mc Cook"
 	},
 
+
+
+	"KBIH" : {
+		"runway": 7498,
+		"market": 0.54,
+		"country": "United States",
+		"name": "Bishop"
+	},
+
+	"KPDX" : {
+		"runway": 11000,
+		"market": 0.81,
+		"country": "Oregon",
+		"name": "Portland Int"
+	},
+
+	"CYEV" : {
+		"runway": 4637,
+		"market": 0.81,
+		"country": "Canada",
+		"name": "Inuvik"
+	},
+
+
+	"CZGI" : {
+		"runway": 3540,
+		"market": 0.77,
+		"country": "Canada",
+		"name": "Gods River"
+	},
+
+	"MUHA" : {
+		"runway": 13123,
+		"market": 0.73,
+		"country": "Cuba",
+		"name": "Havana Int"
+	},
+
+	"TLPL" : {
+		"runway": 9003,
+		"market": 0.73,
+		"country": "Saint Lucia",
+		"name": "Vieux Fort"
+	},
+
+
+	"MKJP" : {
+		"runway": 8900,
+		"market": 0.80,
+		"country": "United States",
+		"name": "Kingston"
+	},
+
+
+	"SKMD" : {
+		"runway": 8202,
+		"market": 0.90,
+		"country": "Colombia",
+		"name": "Medellín E. Olaya"
+	},
+
+	"SKRG" : {
+		"runway": 11483,
+		"market": 0.5,
+		"country": "Colombia",
+		"name": "Medellín J.M. Cordova"
+	},
+
+
+
+	"MYBG" : {
+		"runway": 4536,
+		"market": 0.33,
+		"country": "Bahamas",
+		"name": "Bullocks Harbor"
+	},
+
+	"VLVT" : {
+		"runway": 9843,
+		"market": 0.50,
+		"country": "Laos",
+		"name": "Vientiane"
+	},
+
+	"KMLU" : {
+		"runway": 7507,
+		"market": 0.90,
+		"country": "United States",
+		"name": "Monroe"
+	},
+
+	"PADQ" : {
+		"runway": 7542,
+		"market": 0.62,
+		"country": "United States",
+		"name": "Kodiak"
+	},
+
+	"TAPA" : {
+		"runway": 9003,
+		"market": 0.86,
+		"country": "Antingua",
+		"name": "St Johns"
+	},
+
+
+	"TKPK" : {
+		"runway": 7602,
+		"market": 0.84,
+		"country": "Saint Kitts",
+		"name": "Basseterre"
+	},
+
+	"KGCC" : {
+		"runway": 7500,
+		"market": 0.68,
+		"country": "United States",
+		"name": "Gillette"
+	},
+
+	"SVMI" : {
+		"runway": 11483,
+		"market": 0.88,
+		"country": "Venezuela",
+		"name": "Caracas"
+	},
+
+
+	"MKBS" : {
+		"runway": 3000,
+		"market": 0.71,
+		"country": "Jamaica",
+		"name": "Ocho Rios"
+	},
+
+	"SPIM" : {
+		"runway": 11506,
+		"market": 0.79,
+		"country": "Peru",
+		"name": "Lima"
+	},
+
+	"KLRU" : {
+		"runway": 7499,
+		"market": 0.73,
+		"country": "United States",
+		"name": "Las Cruces"
+	},
+
+	"TNCA" : {
+		"runway": 9000,
+		"market": 0.66,
+		"country": "Aruba",
+		"name": "Oranjestad"
+	},
+
+	"PAKN" : {
+		"runway": 8901,
+		"market": 0.49,
+		"country": "United States",
+		"name": "King Salmon"
+	},
+
+	"MYAP" : {
+		"runway": 5000,
+		"market": 0.35,
+		"country": "Bahamas",
+		"name": "Spring Point"
+	},
+
+	"KRDU" : {
+		"runway": 10000,
+		"market": 0.37,
+		"country": "United States",
+		"name": "Raleigh Durham"
+	},
+
+
+	"KSMF" : {
+		"runway": 8610,
+		"market": 0.77,
+		"country": "United States",
+		"name": "Sacramento Int"
+	},
+
+	"SKYP" : {
+		"runway": 8448,
+		"market": 0.38,
+		"country": "Colombia",
+		"name": "El Yopal"
+	},
+
+
+	"CYFC" : {
+		"runway": 8005,
+		"market": 0.63,
+		"country": "Canada",
+		"name": "Fredericton"
+	},
+
 	"CYWG" : {
 		"runway": 11000,
 		"market": 0.35,
@@ -317,6 +517,20 @@
 	},
 
 
+
+	"MSLP" : {
+		"runway": 10500,
+		"market": 0.58,
+		"country": "El Salvador",
+		"name": "San Salvador"
+	},
+
+	"KBUR" : {
+		"runway": 6886,
+		"market": 0.90,
+		"country": "United States",
+		"name": "Burbank"
+	},
 
 	"EDDM" : {
 		"runway": 13123,
