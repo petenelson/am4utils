@@ -1,0 +1,34 @@
+-A plane with 100% large load configuration will have 70% of the original capacity (If the original capacity is 100,000lbs, 100% Large Load will have 70,000lbs capacity)
+-Large Load is more profitable than Heavy Load
+-Cargo demand is based on PAX demand: Large Load demand = Y-Class demand x 500; Heavy Load demand = J-Class demand x 1000.
+
+f) Good Planes (Cargo)
+Start with cargo:
+-A400M
+-B757-200F
+2nd stage:
+-IL-96T
+-A330-200F
+3rd stage:
+-B747-400F
+-B747-8F
+End game:
+-A380-800F
+-An225
+The An-124 is not more profitable than the 747-8F because it’s so slow.
+
+Cargo: Multiply the auto-price by 1.1 for Large Load and 1.08 for Heavy Load. Round down to 0.01
+
+
+3479 km
+927 kph
+15.45 kpm
+time 3.752hrs
+4.26 flights per day
+
+
+
+large capacity = 89236
+
+demand large 464,000 Lbs
+jfk to boise
