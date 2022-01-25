@@ -14,6 +14,7 @@ $route        = strtoupper( $argv[1] );
 $plane_filter = isset( $argv[2] ) ? strtoupper( $argv[2] ) : false;
 
 $rounding_disabled = false;
+$ignore_range      = false;
 
 echo '******';
 echo PHP_EOL;
@@ -90,7 +91,7 @@ foreach ( $initial_plane_keys as $plane_key ) {
 	$range        = $planes[ $plane_key ]['range'];
 	$plane_runway = $planes[ $plane_key ]['runway'];
 
-	$can_add = $distance <= $range;
+	$can_add = $distance <= $range || $ignore_range;
 
 	if ( ! empty( $runway ) && ! empty( $plane_runway ) && $plane_runway > $runway ) {
 		$can_add = false;

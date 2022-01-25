@@ -62,6 +62,32 @@ function get_planes() {
 }
 
 /**
+ * Gets a list of flights.
+ *
+ * @return array
+ */
+function get_flights() {
+	$flights = json_decode( get_file_contents( 'flights.json' ), true );
+
+	if ( empty( $flights ) ) {
+		var_dump( 'Flights file is broken.' ); die();
+	}
+
+	$defaults = [];
+
+	foreach ( array_keys( $flights ) as $key ) {
+		
+		foreach ( $defaults as $default => $value ) {
+			if ( ! isset( $flights[ $key ][ $default ] ) ) {
+				$flights[ $key ][ $default ] = $value;
+			}
+		}
+	}
+
+	return $flights;
+}
+
+/**
  * Gets a list of all routes.
  *
  * @return array

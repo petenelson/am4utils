@@ -20,6 +20,49 @@
 		"name": "Las Vegas Int"
 	},
 
+	"FTTJ" : {
+		"runway": 9186,
+		"market": 0.35,
+		"country": "Chad",
+		"name": "N'Djamena"
+	},
+
+	"OMDB" : {
+		"runway": 13124,
+		"market": 0.75,
+		"country": "United Arab Emeriates",
+		"name": "Dubai"
+	},
+
+	"SEQM" : {
+		"runway": 9497,
+		"market": 0.57,
+		"country": "Canada",
+		"name": "Whitehorse"
+	},
+
+	"CYXY" : {
+		"runway": 9497,
+		"market": 0.57,
+		"country": "Canada",
+		"name": "Whitehorse"
+	},
+
+
+	"KPHX" : {
+		"runway": 11489,
+		"market": 0.49,
+		"country": "United States",
+		"name": "Phoenix Int"
+	},
+
+	"KDAB" : {
+		"runway": 10500,
+		"market": 0.80,
+		"country": "United States",
+		"name": "Daytona Beach"
+	},
+
 	"KABQ" : {
 		"runway": 13793,
 		"market": 0.78,
@@ -129,6 +172,13 @@
 	},
 
 
+
+	"RKSI" : {
+		"runway": 13000,
+		"market": 0.88,
+		"country": "South Korea",
+		"name": "Seoul Incheon"
+	},
 
 	"KBIH" : {
 		"runway": 7498,
