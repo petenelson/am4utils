@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+
+use AM4Utils\Functions;
+
+require_once 'includes/find-planes.php';

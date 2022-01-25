@@ -3,6 +3,82 @@
 namespace AM4Utils\Functions;
 
 /**
+ * Parse command-line args.
+ *
+ * @param  array $args The argvs param.
+ * @return array
+ */
+function parseArgs($args) {
+	// Copied from php-parse.
+	$operations = [];
+	$files = [];
+	$attributes = [
+		'with-column-info' => false,
+		'with-positions' => false,
+		'with-recovery' => false,
+	];
+
+	array_shift($args);
+	$parseOptions = true;
+	foreach ($args as $arg) {
+		if (!$parseOptions) {
+			$files[] = $arg;
+			continue;
+		}
+
+		switch ($arg) {
+			case '--dump':
+			case '-d':
+				$operations[] = 'dump';
+				break;
+			case '--pretty-print':
+			case '-p':
+				$operations[] = 'pretty-print';
+				break;
+			case '--json-dump':
+			case '-j':
+				$operations[] = 'json-dump';
+				break;
+			case '--var-dump':
+				$operations[] = 'var-dump';
+				break;
+			case '--resolve-names':
+			case '-N';
+				$operations[] = 'resolve-names';
+				break;
+			case '--with-column-info':
+			case '-c';
+				$attributes['with-column-info'] = true;
+				break;
+			case '--with-positions':
+			case '-P':
+				$attributes['with-positions'] = true;
+				break;
+			case '--with-recovery':
+			case '-r':
+				$attributes['with-recovery'] = true;
+				break;
+			case '--help':
+			case '-h';
+				showHelp();
+				break;
+			case '--':
+				$parseOptions = false;
+				break;
+			default:
+				if ($arg[0] === '-') {
+					showHelp("Invalid operation $arg.");
+				} else {
+					$files[] = $arg;
+				}
+		}
+	}
+
+	return [
+		'operations' => $operations, $files, $attributes];
+}
+
+/**
  * Gets the contents of a file.
  *
  * @param  string $filename The file name.
