@@ -20,6 +20,22 @@
 		"name": "Las Vegas Int"
 	},
 
+
+
+	"KLAW" : {
+		"runway": 8599,
+		"market": 0.36,
+		"country": "United States",
+		"name": "Lawton"
+	},
+
+	"EDDT" : {
+		"runway": 9918,
+		"market": 0.79,
+		"country": "Berlin",
+		"name": "Berlin Tegel"
+	},
+
 	"FTTJ" : {
 		"runway": 9186,
 		"market": 0.35,

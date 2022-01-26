@@ -3,82 +3,6 @@
 namespace AM4Utils\Functions;
 
 /**
- * Parse command-line args.
- *
- * @param  array $args The argvs param.
- * @return array
- */
-function parseArgs($args) {
-	// Copied from php-parse.
-	$operations = [];
-	$files = [];
-	$attributes = [
-		'with-column-info' => false,
-		'with-positions' => false,
-		'with-recovery' => false,
-	];
-
-	array_shift($args);
-	$parseOptions = true;
-	foreach ($args as $arg) {
-		if (!$parseOptions) {
-			$files[] = $arg;
-			continue;
-		}
-
-		switch ($arg) {
-			case '--dump':
-			case '-d':
-				$operations[] = 'dump';
-				break;
-			case '--pretty-print':
-			case '-p':
-				$operations[] = 'pretty-print';
-				break;
-			case '--json-dump':
-			case '-j':
-				$operations[] = 'json-dump';
-				break;
-			case '--var-dump':
-				$operations[] = 'var-dump';
-				break;
-			case '--resolve-names':
-			case '-N';
-				$operations[] = 'resolve-names';
-				break;
-			case '--with-column-info':
-			case '-c';
-				$attributes['with-column-info'] = true;
-				break;
-			case '--with-positions':
-			case '-P':
-				$attributes['with-positions'] = true;
-				break;
-			case '--with-recovery':
-			case '-r':
-				$attributes['with-recovery'] = true;
-				break;
-			case '--help':
-			case '-h';
-				showHelp();
-				break;
-			case '--':
-				$parseOptions = false;
-				break;
-			default:
-				if ($arg[0] === '-') {
-					showHelp("Invalid operation $arg.");
-				} else {
-					$files[] = $arg;
-				}
-		}
-	}
-
-	return [
-		'operations' => $operations, $files, $attributes];
-}
-
-/**
  * Gets the contents of a file.
  *
  * @param  string $filename The file name.
@@ -508,9 +432,11 @@ function calculate_all_seat_layouts( $num_seats ) {
  * @return array
  */
 function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) {
+	global $rounding_disabled;
+	global $num_planes;
 
 	$debug      = false;
-	$max_planes = 6.2;
+	$max_planes = 8.2;
 
 	$additonal_cache_keys = [
 		strval( $pax_adjust ),
@@ -528,7 +454,10 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 	if ( file_exists( $cache_file ) ) {
 		$results = file_get_contents( $cache_file );
 		$results = json_decode( $results, true );
-		return $results;
+
+		if ( ! empty( $results['required'] ) && $rounding_disabled || ! $rounding_disabled ) {
+			return $results;
+		}
 	}
 
 	$route = get_route( $route_name );
@@ -559,7 +488,7 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 	$demand          = $route['demand'];
 
 	// Base number of planes to start with.
-	$num_planes = 0.9;
+	// $num_planes = 0.9;
 	$plane_incr = 0.01;
 	$loop       = 0;
 
@@ -592,16 +521,19 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 
 		$num_planes = $num_planes + $plane_incr;
 
-		if ( $num_planes > 1.1 && $num_planes < 1.9 ) {
-			$num_planes  = 1.9;
-		} else if ( $num_planes > 2.1 && $num_planes < 2.9 ) {
-			$num_planes  = 2.9;
-		} else if ( $num_planes > 3.1 && $num_planes < 3.9 ) {
-			$num_planes  = 3.9;
-		} else if ( $num_planes > 4.1 && $num_planes < 4.9 ) {
-			$num_planes  = 4.9;
-		} else if ( $num_planes > 5.1 && $num_planes < 5.9 ) {
-			$num_planes  = 5.9;
+		if ( ! $rounding_disabled ) {
+			if ( $num_planes > 1.1 && $num_planes < 1.9 ) {
+				$num_planes  = 1.9;
+			} else if ( $num_planes > 2.1 && $num_planes < 2.9 ) {
+				$num_planes  = 2.9;
+			} else if ( $num_planes > 3.1 && $num_planes < 3.9 ) {
+				$num_planes  = 3.9;
+			} else if ( $num_planes > 4.1 && $num_planes < 4.9 ) {
+				$num_planes  = 4.9;
+			} else if ( $num_planes > 5.1 && $num_planes < 5.9 ) {
+				$num_planes  = 5.9;
+			}
+
 		}
 	}
 

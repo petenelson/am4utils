@@ -1,0 +1,48 @@
+#!/usr/bin/env php
+<?php
+
+use AM4Utils\Functions;
+use Garden\Cli\Cli;
+
+require_once 'includes/loader.php';
+
+// Define the cli options.
+$cli = new Cli();
+
+$cli->command( 'find-planes' )
+	->description( 'Find planes for a route' )
+    ->opt( 'route:r', 'The route, ex: KJFK-KAUS', false )
+    ->opt( 'plane:p', 'Limit to a specific plane, ex: MC-21-400', false );
+
+
+// Parse cli args.
+$args = $cli->parse( $argv, true );
+
+switch ( $args->getCommand() ) {
+	case 'find-planes':
+		global $num_planes;
+		$num_planes = 0.9;
+
+		$route        = $args->getOpt( 'route' );
+		$plane_filter = $args->getOpt( 'plane' );
+		$min_planes   = $args->getOpt( 'min-planes' );
+
+		if ( empty( $route ) ) {
+			$route = $args->getArg( 0 );
+		}
+
+		if ( empty( $plane ) ) {
+			$plane_filter = $args->getArg( 1 );
+
+			if ( empty( $min_planes ) ) {
+				$min_planes = intval( $args->getArg( 2 ) );
+				$num_planes = ! empty( $min_planes ) ? $min_planes : $num_planes;
+			}
+		}
+
+		$route        = strtoupper( $route );
+		$plane_filter = strtoupper( $plane_filter );
+
+		require_once 'includes/find-planes.php';
+		break;
+}
