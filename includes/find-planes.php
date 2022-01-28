@@ -2,19 +2,20 @@
 
 use AM4Utils\Functions;
 
-require_once 'includes/functions.php';
+global $rounding_disabled;
 
-if ( count( $argv ) < 2 ) {
-	echo 'Pass a route';
+$rounding_disabled = ! empty( $plane_filter );
+$ignore_range      = false;
+
+if ( empty( $route ) ) {
+	echo '******';
+	echo PHP_EOL;
+	echo 'Route required, ex: find-planes KJFK-KAUS';
+	echo PHP_EOL;
+	echo '******';
 	echo PHP_EOL;
 	exit;
 }
-
-$route        = strtoupper( $argv[1] );
-$plane_filter = isset( $argv[2] ) ? strtoupper( $argv[2] ) : false;
-
-$rounding_disabled = false;
-$ignore_range      = false;
 
 echo '******';
 echo PHP_EOL;
@@ -66,6 +67,8 @@ if ( ! empty( $plane_filter ) ) {
 			'MC-21-400',
 			'B747SP',
 			'B747-8',
+			'B777-300',
+			'B777-300ER',
 			'DC-10-10',
 			'MD-88',
 			'MD-81',
@@ -106,8 +109,6 @@ foreach ( $initial_plane_keys as $plane_key ) {
 $pax_adjust = 0.88;
 
 foreach ( $plane_keys as $plane ) {
-
-	// TODO add caching.
 
 	echo 'Calculating ' . $plane; // phpcs:ignore
 	echo PHP_EOL;

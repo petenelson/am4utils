@@ -9,6 +9,7 @@
         }
     ],
     "require": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "vanilla/garden-cli": "^3.1"
     }
 }

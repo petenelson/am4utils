@@ -432,9 +432,11 @@ function calculate_all_seat_layouts( $num_seats ) {
  * @return array
  */
 function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) {
+	global $rounding_disabled;
+	global $num_planes;
 
 	$debug      = false;
-	$max_planes = 6.2;
+	$max_planes = 8.2;
 
 	$additonal_cache_keys = [
 		strval( $pax_adjust ),
@@ -452,7 +454,10 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 	if ( file_exists( $cache_file ) ) {
 		$results = file_get_contents( $cache_file );
 		$results = json_decode( $results, true );
-		return $results;
+
+		if ( ! empty( $results['required'] ) && $rounding_disabled || ! $rounding_disabled ) {
+			return $results;
+		}
 	}
 
 	$route = get_route( $route_name );
@@ -483,7 +488,7 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 	$demand          = $route['demand'];
 
 	// Base number of planes to start with.
-	$num_planes = 0.9;
+	// $num_planes = 0.9;
 	$plane_incr = 0.01;
 	$loop       = 0;
 
@@ -516,16 +521,19 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 
 		$num_planes = $num_planes + $plane_incr;
 
-		if ( $num_planes > 1.1 && $num_planes < 1.9 ) {
-			$num_planes  = 1.9;
-		} else if ( $num_planes > 2.1 && $num_planes < 2.9 ) {
-			$num_planes  = 2.9;
-		} else if ( $num_planes > 3.1 && $num_planes < 3.9 ) {
-			$num_planes  = 3.9;
-		} else if ( $num_planes > 4.1 && $num_planes < 4.9 ) {
-			$num_planes  = 4.9;
-		} else if ( $num_planes > 5.1 && $num_planes < 5.9 ) {
-			$num_planes  = 5.9;
+		if ( ! $rounding_disabled ) {
+			if ( $num_planes > 1.1 && $num_planes < 1.9 ) {
+				$num_planes  = 1.9;
+			} else if ( $num_planes > 2.1 && $num_planes < 2.9 ) {
+				$num_planes  = 2.9;
+			} else if ( $num_planes > 3.1 && $num_planes < 3.9 ) {
+				$num_planes  = 3.9;
+			} else if ( $num_planes > 4.1 && $num_planes < 4.9 ) {
+				$num_planes  = 4.9;
+			} else if ( $num_planes > 5.1 && $num_planes < 5.9 ) {
+				$num_planes  = 5.9;
+			}
+
 		}
 	}
 
