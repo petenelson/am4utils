@@ -27,6 +27,26 @@
 	},
 
 
+
+
+	"KVCT": {
+		"distance": 2476,
+		"demand": {
+			"y": 593,
+			"j": 580,
+			"f": 132
+		}
+	},
+
+	"LIRF": {
+		"distance": 6866,
+		"demand": {
+			"y": 775,
+			"j": 730,
+			"f": 269
+		}
+	},
+
 	"OMDB": {
 		"distance": 11002,
 		"demand": {

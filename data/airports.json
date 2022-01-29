@@ -22,6 +22,22 @@
 
 
 
+	"KVCT" : {
+		"runway": 9101,
+		"market": 0.48,
+		"country": "United States",
+		"name": "Victoria"
+	},
+
+
+	"LIRF" : {
+		"runway": 12795,
+		"market": 0.84,
+		"country": "Italy",
+		"name": "Rome Leonardo d. V."
+	},
+
+
 	"KLAW" : {
 		"runway": 8599,
 		"market": 0.36,
@@ -306,6 +322,23 @@
 		"country": "Saint Kitts",
 		"name": "Basseterre"
 	},
+
+	
+
+	"KGGG" : {
+		"runway": 10000,
+		"market": 0.39,
+		"country": "United States",
+		"name": "Longview"
+	},
+
+	"TFFF" : {
+		"runway": 10826,
+		"market": 0.85,
+		"country": "France",
+		"name": "Fort-de-France"
+	},
+
 
 	"KGCC" : {
 		"runway": 7500,
