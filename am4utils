@@ -12,8 +12,8 @@ $cli = new Cli();
 // Add CLI commands.
 $cli->command( 'find-planes' )
 	->description( 'Find planes for a route' )
-    ->opt( 'route:r', 'The route, ex: KJFK-KAUS', false )
-    ->opt( 'plane:p', 'Limit to a specific plane, ex: MC-21-400', false );
+	->opt( 'route:r', 'The route, ex: KJFK-KAUS', false )
+	->opt( 'plane:p', 'Limit to a specific plane, ex: MC-21-400', false );
 
 $cli->command( 'add-airport' )
 	->description( 'Adds an airport' )
@@ -23,11 +23,24 @@ $cli->command( 'add-airport' )
     ->opt( 'country', 'Country name, ex: United States', true )
     ->opt( 'name', 'Airport name, ex: New York JFK', true );
 
+$cli->command( 'airport-exists' )
+	->description( 'Does an airport exist in the data file?' )
+    ->opt( 'code', 'Airport code, ex: KJFK', true );
 
 // Parse CLI args.
 $args = $cli->parse( $argv, true );
 
 switch ( $args->getCommand() ) {
+	case 'airport-exists';
+		$airports = Functions\get_airports();
+		$code = strtoupper( $args->getOpt( 'code' ) );
+		if ( array_key_exists( $code, $airports ) ) {
+			echo 'Airport exists.' . PHP_EOL;
+		} else {
+			echo 'Airport does not exist.' . PHP_EOL;
+		}
+		break;
+
 	case 'add-airport';
 		Functions\add_airport(
 			$args->getOpt( 'code' ),
