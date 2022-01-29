@@ -15,6 +15,19 @@ function get_file_contents( $filename ) {
 }
 
 /**
+ * Puts the contents to a file.
+ *
+ * @param  string $filename The file name.
+ * @param  string $contents The file JSON contents.
+ * @return void
+ */
+function put_file_contents( $filename, $contents ) {
+	$dir = dirname( dirname( __FILE__ ) );
+	$file = $dir . '/data/' . $filename;
+	file_put_contents(  $file, $contents );
+}
+
+/**
  * Gets a list of airports.
  *
  * @return array
@@ -29,6 +42,33 @@ function get_airports() {
 	}
 
 	return $airports;
+}
+
+/**
+ * Adds an airport to the airport.json file.
+ *
+ * @param string $code    The airport code ( ex: KDFW )
+ * @param int    $runway  The runway length.
+ * @param float  $market  The market percent (ex: 0.75)
+ * @param string $country The country name
+ * @param string $name    The airport name (ex: New York JFK)
+ */
+function add_airport( $code, $runway, $market, $country, $name ) {
+
+	$code = strtoupper( $code );
+
+	$airports = get_airports();
+
+	if ( ! array_key_exists( $code, $airports ) ) {
+		$airports[ $code ] = [
+			'runway'  => floatval( $runway ),
+			'market'  => floatval( $market ),
+			'country' => trim( $country ),
+			'name'    => trim( $name ),
+		];
+	}
+
+	put_file_contents( 'airports.json', json_encode( $airports, JSON_PRETTY_PRINT ) );
 }
 
 /**

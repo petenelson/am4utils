@@ -9,16 +9,35 @@ require_once 'includes/loader.php';
 // Define the cli options.
 $cli = new Cli();
 
+// Add CLI commands.
 $cli->command( 'find-planes' )
 	->description( 'Find planes for a route' )
     ->opt( 'route:r', 'The route, ex: KJFK-KAUS', false )
     ->opt( 'plane:p', 'Limit to a specific plane, ex: MC-21-400', false );
 
+$cli->command( 'add-airport' )
+	->description( 'Adds an airport' )
+    ->opt( 'code', 'Airport code, ex: KJFK', true )
+    ->opt( 'runway', 'Runway length, ex: 10500', true )
+    ->opt( 'market', 'Market percent, ex: 0.75', true )
+    ->opt( 'country', 'Country name, ex: United States', true )
+    ->opt( 'name', 'Airport name, ex: New York JFK', true );
 
-// Parse cli args.
+
+// Parse CLI args.
 $args = $cli->parse( $argv, true );
 
 switch ( $args->getCommand() ) {
+	case 'add-airport';
+		Functions\add_airport(
+			$args->getOpt( 'code' ),
+			$args->getOpt( 'runway' ),
+			$args->getOpt( 'market' ),
+			$args->getOpt( 'country' ),
+			$args->getOpt( 'name' )
+		);
+		break;
+
 	case 'find-planes':
 		global $num_planes;
 		$num_planes = 0.9;
