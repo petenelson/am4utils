@@ -618,5 +618,23 @@
         "market": 0.4,
         "country": "United States",
         "name": "Sacramento Mather"
+    },
+    "SPNC": {
+        "runway": 8202,
+        "market": 0.8,
+        "country": "Peru",
+        "name": "Huanuco"
+    },
+    "KCDC": {
+        "runway": 8653,
+        "market": 0.69,
+        "country": "United States",
+        "name": "Cedar City"
+    },
+    "EHAM": {
+        "runway": 12467,
+        "market": 0.47,
+        "country": "Netherlands",
+        "name": "Amsterdam"
     }
 }

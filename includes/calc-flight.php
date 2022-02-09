@@ -2,7 +2,7 @@
 
 use AM4Utils\Functions;
 
-require_once 'includes/functions.php';
+require_once 'functions.php';
 
 if ( count( $argv ) < 2 ) {
 	echo 'Pass a flight name/route registraion';

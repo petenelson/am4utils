@@ -36,6 +36,16 @@
 	},
 
 
+	"SPNC": {
+		"distance": 5245,
+		"demand": {
+			"y": 351,
+			"j": 300,
+			"f": 149
+		}
+	},
+
+
 	"FTTJ": {
 		"distance": 11254,
 		"demand": {
