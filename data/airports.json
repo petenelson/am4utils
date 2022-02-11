@@ -636,5 +636,11 @@
         "market": 0.47,
         "country": "Netherlands",
         "name": "Amsterdam"
+    },
+    "GQNO": {
+        "runway": 11155,
+        "market": 0.36,
+        "country": "Mauritania",
+        "name": "Nouakchott"
     }
 }
