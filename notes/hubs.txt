@@ -1,0 +1,37 @@
+10. HUBS
+As you progress in the game, you will buy more and more planes… and planes need routes. Somewhen you will probably run out of good routes, so you think about buying a new hub. Here are some good hubs:
+Asia
+-Seoul Incheon, South Korea, ICN/RKSI
+-Singapore, Singapore, SIN/WSSS
+-Hong Kong, Hong Kong/China, HKG/VHHH
+-New Delhi, India, DEL/VIDP
+-Dubai, UAE, DXB/OMDB
+-Manama, Bahrain, BAH/OBBI
+
+Australia
+-Sydney intl, Australia, SYD/YSSY
+-Canberra, Australia, CBR/YSCB
+-Nadi, Fiji, NAN/NFFN (only good for long haul)
+
+Europe
+-London Heathrow, UK, LHR/EGLL
+-Amsterdam Shiphol, Netherlands, AMS/EHAM
+-Frankfurt intl, Germany, FRA/EDDF
+-Paris Charles de Gaulle, France, CDG/LFPG
+
+North America
+-New York John F. Kennedy, USA, JFK/KJFK
+-Dallas Fort-Worth, USA, DFW/KDFW
+-Chicago O’Hare, USA, ORD/KORD
+-Los Angeles, USA, LAX/KLAX
+
+South America
+-Sao Paolo Guarulhos, Brazil, GRU/SBGR
+-Santiago de Chile, Chile, SCL/SCEL
+-Caracas, Venezuela, CCS/SVMI
+-Buenos Aires int, Argentina, EZE/SAEZ
+
+Africa
+-Tunis, Tunisia, TUN/DTTA
+-Luanda, Angola, LAD/FNLU
+-Dakar L.S. Senghor, Senegal, DKR/DOOY

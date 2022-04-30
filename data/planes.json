@@ -1,30 +1,13 @@
 {
     "A380-800": {
         "range": 14500,
-        "speed": 945,
+        "speed": 1049,
         "seats": 600,
         "runway": 9680,
         "cost": 215629503,
         "fuel": 22.89,
-        "a-check": 12937770
-    },
-    "L-1011-500": {
-        "range": 9900,
-        "speed": 876,
-        "seats": 315,
-        "runway": 9400,
-        "cost": 33120715,
-        "fuel": 19.2,
-        "a-check": 3146468
-    },
-    "MD-81": {
-        "range": 2910,
-        "speed": 819,
-        "seats": 172,
-        "runway": 2000,
-        "cost": 2296357,
-        "fuel": 17.44,
-        "a-check": 482234
+        "a-check": 12937770,
+        "profit_per_hour": 66370
     },
     "MD-88": {
         "range": 3800,
@@ -55,34 +38,37 @@
     },
     "MD-11ER": {
         "range": 13408,
-        "speed": 788,
+        "speed": 955,
         "seats": 410,
         "runway": 2000,
         "cost":  60676778,
-        "fuel": 23.28,
-        "a-check":  7584598
+        "fuel": 25.92,
+        "a-check":  7584598,
+        "profit_per_hour": 31598
     },
     "A220-100": {
         "range": 5750,
-        "speed": 871,
+        "speed": 967,
         "seats": 135,
         "runway": 4790,
         "cost": 3234528,
         "fuel": 11,
-        "a-check": 307280
+        "a-check": 307280,
+        "profit_per_hour": 15770
     },
     "A320-200": {
         "range": 5750,
-        "speed": 823,
+        "speed": 881,
         "seats": 164,
         "runway": 6500,
         "cost": 6770196,
         "fuel": 11.55,
-        "a-check": 1049380
+        "a-check": 1049380,
+        "profit_per_hour": 15738
     },
     "A321-200": {
         "range": 6000,
-        "speed": 780,
+        "speed": 835,
         "seats": 220,
         "runway": 7250,
         "cost": 8154432,
@@ -91,12 +77,13 @@
     },
     "A320-NEO": {
         "range": 7000,
-        "speed": 884,
+        "speed": 893,
         "seats": 164,
         "runway": 6500,
         "cost": 14770196,
         "fuel": 7.7,
-        "a-check": 590808
+        "a-check": 590808,
+        "profit_per_hour": 21090
     },
     "A321-XLR": {
         "range": 8900,
@@ -127,7 +114,7 @@
     },
     "A330-300": {
         "range": 10000,
-        "speed": 871,
+        "speed": 958,
         "seats": 335,
         "runway": 9090,
         "cost": 43330073,
@@ -150,35 +137,32 @@
         "runway": 8760,
         "cost": 77538384,
         "fuel": 15.98,
-        "a-check": 3101536
+        "a-check": 3101536,
+        "profit_per_hour": 36506
     },
-    "A350-900R": {
-        "range": 14500,
-        "speed": 860,
-        "seats": 314,
-        "runway": 8760,
-        "cost": 82723576,
-        "fuel": 15.98,
-        "a-check":  3308944
-    },
-    "A350-900ULR": {
-        "range": 18000,
-        "speed": 848,
-        "seats": 300,
-        "runway": 8760,
-        "cost": 91723576,
-        "fuel": 13.16,
-        "a-check":  3908642
-    },
-    "A330-900neo": {
+
+    "A330-900NEO": {
         "range": 12130,
         "speed": 801,
         "seats": 440,
         "runway": 9950,
         "cost": 109315468,
         "fuel": 13,
-        "a-check": 4372618
+        "a-check": 4372618,
+        "profit_per_hour": 46555
     },
+
+    "A330-800NEO": {
+        "range": 13900,
+        "speed": 801,
+        "seats": 406,
+        "runway": 9950,
+        "cost": 85324684,
+        "fuel": 12,
+        "a-check": 3413028,
+        "profit_per_hour": 44385
+    },
+
     "A340-600": {
         "range": 14630,
         "speed": 871,
@@ -190,7 +174,7 @@
     },
     "A350-800": {
         "range": 14500,
-        "speed": 945,
+        "speed": 860,
         "seats": 270,
         "runway": 8760,
         "cost": 62240270,
@@ -213,7 +197,8 @@
         "runway": 5200,
         "cost":  6517748,
         "fuel": 11.44,
-        "a-check": 619186
+        "a-check": 619186,
+        "profit_per_hour": 20190
     },
     "CRJ 100": {
         "range": 2417,
@@ -240,7 +225,8 @@
         "runway": 2000,
         "cost":  1598528,
         "fuel": 10.10,
-        "a-check": 119890
+        "a-check": 119890,
+        "profit_per_hour": 12682
     },
     "ERJ 190-200LR": {
         "range": 3334,
@@ -249,7 +235,8 @@
         "runway": 2000,
         "cost":  2055338,
         "fuel": 10.10,
-        "a-check": 123320
+        "a-check": 123320,
+        "profit_per_hour": 12670
     },
     "ERJ 190-200AR": {
         "range": 4077,
@@ -258,7 +245,8 @@
         "runway": 2000,
         "cost": 2825347,
         "fuel": 9.09,
-        "a-check": 169520
+        "a-check": 169520,
+        "profit_per_hour": 12954
     },
     "DC-9-10": {
         "seats": 90,
@@ -276,7 +264,8 @@
         "runway": 6600,
         "cost":  4552276,
         "fuel": 17.51,
-        "a-check": 432466
+        "a-check": 432466,
+        "profit_per_hour": 24199
     },
     "MC-21-400": {
         "seats": 230,
@@ -285,7 +274,8 @@
         "runway": 6800,
         "cost":  5204503,
         "fuel": 19.57,
-        "a-check": 494428
+        "a-check": 494428,
+        "profit_per_hour": 28393
     },
     "DC-10-10": {
         "seats": 250,
@@ -294,7 +284,8 @@
         "runway": 2000,
         "cost":  6806411,
         "fuel": 20.33,
-        "a-check": 1633538
+        "a-check": 1633538,
+        "profit_per_hour": 24436
     },
     "B747SP": {
         "seats": 350,
@@ -303,7 +294,28 @@
         "runway": 7545,
         "cost":  40824000,
         "fuel": 20.24,
-        "a-check": 3878280
+        "a-check": 3878280,
+        "profit_per_hour": 34935
+    },
+    "A350-900": {
+        "seats": 314,
+        "range": 14500,
+        "speed": 860,
+        "runway": 8760,
+        "cost":  70503048,
+        "fuel": 15.98,
+        "a-check": 2820122,
+        "profit_per_hour": 32200
+    },
+    "A350-900ULR": {
+        "seats": 300,
+        "range": 18000,
+        "speed": 848,
+        "runway": 8760,
+        "cost":  91723576,
+        "fuel": 13.16,
+        "a-check": 3908642,
+        "profit_per_hour": 25744
     },
     "B747-8": {
         "range": 14815,
@@ -312,7 +324,8 @@
         "runway": 10250,
         "cost":  121097727,
         "fuel": 21.84,
-        "a-check":  8476840
+        "a-check":  8476840,
+        "profit_per_hour": 53673
     },
     "B727-200": {
         "range": 4450,
@@ -321,7 +334,8 @@
         "runway": 6450,
         "cost":  4883110,
         "fuel": 15.15,
-        "a-check": 1342856
+        "a-check": 1342856,
+        "profit_per_hour": 17918
     },
     "B727-100": {
         "range": 3056,
@@ -330,7 +344,8 @@
         "runway": 8300,
         "cost":  1364217,
         "fuel": 13,
-        "a-check": 129600
+        "a-check": 129600,
+        "profit_per_hour": 13817
     },
     "B757-300": {
         "range": 6421,
@@ -357,7 +372,8 @@
         "runway": 7500,
         "cost": 18011300,
         "fuel": 7.21,
-        "a-check": 720452
+        "a-check": 720452,
+        "profit_per_hour": 22975
     },
     "B777-200": {
         "range": 9695,
@@ -366,7 +382,8 @@
         "runway": 9000,
         "cost": 60803647,
         "fuel": 17.46,
-        "a-check":  7296438
+        "a-check":  7296438,
+        "profit_per_hour": 37963
     },
     "B777-200LR": {
         "range": 14500,
@@ -384,7 +401,8 @@
         "runway": 11000,
         "cost": 68243786,
         "fuel": 19.19,
-        "a-check":  5800722
+        "a-check":  5800722,
+        "profit_per_hour": 35804
     },
     "B787-9": {
         "range": 14500,
@@ -411,7 +429,8 @@
         "runway": 9000,
         "cost": 77983382,
         "fuel": 19.60,
-        "a-check": 3119336
+        "a-check": 3119336,
+        "profit_per_hour": 37713
     },
     "B777-200ER": {
         "range": 14260,
@@ -420,16 +439,18 @@
         "runway": 11000,
         "cost": 84172921,
         "fuel": 17.67,
-        "a-check": 9259022
+        "a-check": 9259022,
+        "profit_per_hour": 36812
     },
     "B777-300": {
         "range": 14685,
         "speed": 1036,
-        "seats": 350,
+        "seats": 451,
         "runway": 9000,
         "cost": 89987157,
         "fuel": 17.67,
-        "a-check": 9898588
+        "a-check": 9898588,
+        "profit_per_hour": 35212
     },
     "B777-9X": {
         "range": 14500,
@@ -438,7 +459,8 @@
         "runway": 9000,
         "cost": 91150989,
         "fuel": 21.56,
-        "a-check": 3646040
+        "a-check": 3646040,
+        "profit_per_hour": 43190
     },
     "B747-400ER": {
         "range": 14500,
@@ -447,7 +469,8 @@
         "runway": 10250,
         "cost": 97556659,
         "fuel": 19.32,
-        "a-check": 8292316
+        "a-check": 8292316,
+        "profit_per_hour": 30812
     },
     "B737-900ER": {
         "seats": 215,
@@ -465,7 +488,8 @@
         "runway": 7550,
         "cost": 5535200,
         "fuel": 10.10,
-        "a-check": 387464
+        "a-check": 387464,
+        "profit_per_hour": 19856
     },
     "B737 MAX 10": {
         "range": 7000,
@@ -483,17 +507,19 @@
         "runway": 8000,
         "cost":  72795638,
         "fuel": 18.62,
-        "a-check": 6915586
+        "a-check": 6915586,
+        "profit_per_hour": 37630
     },
 
-        "Il-96-400": {
+    "IL-96-400": {
         "range": 10000,
         "speed": 809,
         "seats": 436,
         "runway": 2000,
         "cost": 40441348,
         "fuel": 27.72,
-        "a-check": 4448548
+        "a-check": 4448548,
+        "profit_per_hour": 36640
     },
 
     "B777-300LR": {
@@ -503,7 +529,8 @@
         "runway": 11000,
         "cost":  131844032,
         "fuel": 21.63,
-        "a-check": 10547522
+        "a-check": 10547522,
+        "profit_per_hour": 40477
     },
     "B747-300": {
         "range": 12400,
@@ -516,12 +543,13 @@
     },
     "B747-400D": {
         "range": 2905,
-        "speed": 846,
+        "speed": 1010,
         "seats": 568,
         "runway": 10250,
         "cost": 80125136,
         "fuel": 20.24,
-        "a-check": 11217520
+        "a-check": 11217520,
+        "profit_per_hour": 57735
     },
     "B787-8": {
         "range": 14500,
@@ -530,7 +558,8 @@
         "runway": 9000,
         "cost": 19411920,
         "fuel": 14.4,
-        "a-check": 1358834
+        "a-check": 1358834,
+        "profit_per_hour": 24252
     },
     "B737-800": {
         "range": 7000,
@@ -539,6 +568,7 @@
         "runway": 7550,
         "cost": 4407858,
         "fuel": 9.40,
-        "a-check": 462826
+        "a-check": 462826,
+        "profit_per_hour": 18216
     }
 }

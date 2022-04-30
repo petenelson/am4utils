@@ -1,0 +1,40 @@
+* CPTs
+
+** Fleet Plane
+	** Name
+	** Notes
+	** Fleet Plane Flags
+	** Tax: Route
+	** Tax: Fleet Flags
+
+* Taxonomies
+
+** Route
+	** From Code
+	** To Code
+	** Distance
+	** Demand (Y/J/F)
+	** Notes
+	** Event
+	** High Profit
+	** Low Profit
+
+** Airport
+	** Code
+	** Country & Name
+	** Market
+	** Runway
+
+** Plane
+	** Speed
+	** Range
+	** Seats
+	** Runway
+	** Fuel
+	** CO2
+	** Type (Pax/Cargo)
+
+** Fleet Flags
+	** Speed Boost
+	** Fuel Boost
+	** CO2 Boost

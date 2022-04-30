@@ -1,4 +1,9 @@
 {
+
+    "EVNT": {
+        "runway": 10000
+    },
+
     "EGLL": {
         "runway": 12799,
         "market": 0.49,
@@ -35,6 +40,222 @@
         "country": "United States",
         "name": "Lawton"
     },
+
+    "NTAA": {
+        "runway": 11306,
+        "market": 0.36,
+        "country": "French Polynesia",
+        "name": "Papeete"
+    },
+
+
+
+    "RPLL": {
+        "runway": 12261,
+        "market": 0.63,
+        "country": "Philipines",
+        "name": "Manila"
+    },
+
+
+    "SLLP": {
+        "runway": 13123,
+        "market": 0.35,
+        "country": "Bolivia",
+        "name": "La Pax"
+    },
+
+    "KPNC": {
+        "runway": 7201,
+        "market": 0.81,
+        "country": "United States",
+        "name": "Ponca City"
+    },
+
+    
+    "EBBR": {
+        "runway": 11936,
+        "market": 0.52,
+        "country": "Belgium",
+        "name": "Brussels"
+    },
+
+    "LOWG": {
+        "runway": 9842,
+        "market": 0.90,
+        "country": "Austria",
+        "name": "Graz"
+    },
+
+
+    "TNCC": {
+        "runway": 11188,
+        "market": 0.42,
+        "country": "Curaçao",
+        "name": "Willemstad"
+    },
+
+    "OLBA": {
+        "runway": 12467,
+        "market": 0.59,
+        "country": "Lebanon",
+        "name": "Beruit"
+    },
+
+
+    "FNLU": {
+        "runway": 12190,
+        "market": 0.59,
+        "country": "Angola",
+        "name": "Luanda"
+    },
+
+
+    "CYOW": {
+        "runway": 10000,
+        "market": 0.75,
+        "country": "Canada",
+        "name": "Ottowa Intl"
+    },
+
+
+    "LPPT": {
+        "runway": 12484,
+        "market": 0.52,
+        "country": "Portugal",
+        "name": "Lisbon"
+    },
+
+
+    "PAFA": {
+        "runway": 11800,
+        "market": 0.59,
+        "country": "United States",
+        "name": "Fairbanks"
+    },
+
+
+
+    "LTBA": {
+        "runway": 9843,
+        "market": 0.51,
+        "country": "Turkey",
+        "name": "Istanbul Atatürk"
+    },
+
+    "DAAG": {
+        "runway": 11483,
+        "market": 0.30,
+        "country": "Algeria",
+        "name": "Algiers"
+    },
+
+    "SAEZ": {
+        "runway": 10827,
+        "market": 0.33,
+        "country": "Argentina",
+        "name": "Buenos Aires Int"
+    },
+
+    "UUOO": {
+        "runway": 7546,
+        "market": 0.89,
+        "country": "Russia",
+        "name": "Voronezh"
+    },
+
+    "EDDF": {
+        "runway": 13123,
+        "market": 0.63,
+        "country": "Germany",
+        "name": "Frankfurt Intl"
+    },
+
+
+
+    "KCLT": {
+        "runway": 10000,
+        "market": 0.75,
+        "country": "United States",
+        "name": "Charlotte"
+    },
+
+    "KCLL": {
+        "runway": 7000,
+        "market": 0.73,
+        "country": "United States",
+        "name": "College Station"
+    },
+
+    "OJAI": {
+        "runway": 12008,
+        "market": 0.50,
+        "country": "Jordan",
+        "name": "Amman Queen Alia"
+    },
+
+    "LTBL": {
+        "runway": 9821,
+        "market": 0.90,
+        "country": "Turkey",
+        "name": "Izmir"
+    },
+
+
+    "GMME": {
+        "runway": 11483,
+        "market": 0.84,
+        "country": "Morocco",
+        "name": "Rabat"
+    },
+
+
+    "SMJP": {
+        "runway": 11417,
+        "market": 0.30,
+        "country": "Suriname",
+        "name": "Zandery"
+    },
+
+
+    "KDFW": {
+        "runway": 13401,
+        "market": 0.43,
+        "country": "United States",
+        "name": "Dallas-Fort Worth"
+    },
+
+
+    "KBRO": {
+        "runway": 7400,
+        "market": 0.87,
+        "country": "United States",
+        "name": "Brownsville"
+    },
+
+
+    "KWWR": {
+        "runway": 5502,
+        "market": 0.53,
+        "country": "United States",
+        "name": "Woodward"
+    },
+
+
+    "LTFD": {
+        "runway": 9842,
+        "market": 0.69,
+        "country": "Turkey",
+        "name": "Edremit"
+    },
+
+    "LKPR": {
+        "runway": 9918,
+        "market": 0.79,
+        "country": "Berlin",
+        "name": "Berlin Tegel"
+    },
+
     "EDDT": {
         "runway": 9918,
         "market": 0.79,
@@ -455,6 +676,12 @@
         "country": "United States",
         "name": "Moses Lake"
     },
+    "CYLW": {
+        "runway": 8900,
+        "market": 0.39,
+        "country": "Canada",
+        "name": "Kelowna"
+    },
     "CYSU": {
         "runway": 8000,
         "market": 0.81,
@@ -491,6 +718,82 @@
         "country": "Canada",
         "name": "Cartwright"
     },
+    "VVNB": {
+        "runway": 12466,
+        "market": 0.52,
+        "country": "Vietnam",
+        "name": "Hanoi"
+    },
+
+    "YSCB": {
+        "runway": 14029,
+        "market": 0.54,
+        "country": "Australia",
+        "name": "Canberra"
+    },
+
+
+
+
+    "FBSK": {
+        "runway": 13123,
+        "market": 0.64,
+        "country": "Trinidad and Tobago",
+        "name": "Gaborone"
+    },
+
+
+    "TTPP": {
+        "runway": 10500,
+        "market": 0.89,
+        "country": "Trinidad and Tobago",
+        "name": "Port of Spain"
+    },
+
+
+    "RJTT": {
+        "runway": 11024,
+        "market": 0.37,
+        "country": "Japan",
+        "name": "Tokyo Haneda"
+    },
+
+    "LUKK": {
+        "runway": 11779,
+        "market": 0.62,
+        "country": "Moldova",
+        "name": "Chişinău"
+    },
+
+    "LFPG": {
+        "runway": 13829,
+        "market": 0.41,
+        "country": "France",
+        "name": "Paris Charles de Gaulle"
+    },
+
+
+
+    "SOCA": {
+        "runway": 10486,
+        "market": 0.62,
+        "country": "French Guinea",
+        "name": "Cayenne / Rochambeau"
+    },
+
+    "MWCR": {
+        "runway": 7021,
+        "market": 0.8,
+        "country": "Cayman Islands",
+        "name": "Georgetown"
+    },
+    "PACM": {
+        "runway": 10000,
+        "market": 0.57,
+        "country": "United States",
+        "name": "Scammon Bay"
+    },
+
     "MSLP": {
         "runway": 10500,
         "market": 0.58,
@@ -502,6 +805,12 @@
         "market": 0.9,
         "country": "United States",
         "name": "Burbank"
+    },
+    "KBWI": {
+        "runway": 10502,
+        "market": 0.76,
+        "country": "United States",
+        "name": "Baltimore Int"
     },
     "EDDM": {
         "runway": 13123,
@@ -523,7 +832,9 @@
     },
     "LGAV": {
         "runway": 13123,
-        "market": 0.4
+        "market": 0.4,
+        "country": "Greece",
+        "name": "Athens"
     },
     "KTOL": {
         "runway": 10600,
@@ -642,5 +953,59 @@
         "market": 0.36,
         "country": "Mauritania",
         "name": "Nouakchott"
+    },
+    "ORBI": {
+        "runway": 13124,
+        "market": 0.75,
+        "country": "Iraq",
+        "name": "Baghdad"
+    },
+    "PABL": {
+        "runway": 5539,
+        "market": 0.42,
+        "country": "United States",
+        "name": "Buckland"
+    },
+    "TJIG": {
+        "runway": 5317,
+        "market": 0.61,
+        "country": "Puerto Rico",
+        "name": "San Juan F.L. Ribas"
+    },
+    "MMAA": {
+        "runway": 10832,
+        "market": 0.88,
+        "country": "Mexico",
+        "name": "Acapulco"
+    },
+    "MTPP": {
+        "runway": 9974,
+        "market": 0.6,
+        "country": "Haiti",
+        "name": "Port-au-Prince"
+    },
+    "MBGT": {
+        "runway": 6362,
+        "market": 0.74,
+        "country": "Turks and Caicos Islands",
+        "name": "Cockburn Town"
+    },
+    "ZGSZ": {
+        "runway": 12467,
+        "market": 0.31,
+        "country": "China",
+        "name": "Shenzhen"
+    },
+    "KSJC": {
+        "runway": 11000,
+        "market": 0.86,
+        "country": "United States",
+        "name": "San Jose"
+    },
+    "PHKO": {
+        "runway": 11000,
+        "market": 0.38,
+        "country": "United States",
+        "name": "Kailua\/Kona"
     }
 }

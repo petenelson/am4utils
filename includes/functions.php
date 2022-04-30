@@ -87,6 +87,7 @@ function get_planes() {
 		'runway'  => 0,
 		'cost'    => 0,
 		'a-check' => 0,
+		'profit_per_hour' => 0,
 	];
 
 	foreach ( array_keys( $planes ) as $key ) {
@@ -163,6 +164,21 @@ function get_routes() {
 					if ( isset( $airports[ $destination ]['runway'] ) ) {
 						$data['runway'] = $airports[ $destination ]['runway'];
 					}
+
+					// Add ticket prices.
+					// 150+distance*0.3 (Y)
+					// 500+distance*0.6 (J)
+					// 1000+distance*0.9
+					$data['ticket_price'] = [];
+
+					$data['ticket_price']['y'] = floor( $data['distance'] * 0.3) + 150;
+					$data['ticket_price']['j'] = floor( $data['distance'] * 0.6) + 500;
+					$data['ticket_price']['f'] = floor( $data['distance'] * 0.9) + 1000;
+
+					// Now add the additional percentage.
+					$data['ticket_price']['y'] = intval( floor( $data['ticket_price']['y'] * 1.10 ) );
+					$data['ticket_price']['j'] = intval( floor( $data['ticket_price']['j'] * 1.08 ) );
+					$data['ticket_price']['f'] = intval( floor( $data['ticket_price']['f'] * 1.06 ) );
 
 					$route_list[ $hub . '-' . $destination ] = $data;
 				}
@@ -272,7 +288,7 @@ function get_empty_seat_layout() {
 function calculate_flight_time( $plane, $route ) {
 
 	$distance   = $route['distance'];
-	$speed      = $plane['speed'];
+	$speed      = $plane['speed'] + 1.1; // Note: includes the 10% speed increase.
 	$km_per_min = $speed / 60;
 	$minutes    = $distance / $km_per_min;
 	$minutes    = intval( ceil ( $minutes ) );
@@ -476,13 +492,14 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 	global $num_planes;
 
 	$debug      = false;
-	$max_planes = 8.2;
+	$max_planes = 5.2;
+	$day_hours  = 14;
 
 	$additonal_cache_keys = [
 		strval( $pax_adjust ),
 	];
 
-	$cache_key = "{$route_name}:{$plane_name}:" . md5( json_encode( $additonal_cache_keys ) );
+	$cache_key = "{$route_name}:{$plane_name}:{$day_hours}" . md5( json_encode( $additonal_cache_keys ) );
 	$cache_dir = dirname( dirname( __FILE__ )  ) . '/.cache';
 
 	if ( ! file_exists( $cache_dir ) ) {
@@ -494,6 +511,10 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 	if ( file_exists( $cache_file ) ) {
 		$results = file_get_contents( $cache_file );
 		$results = json_decode( $results, true );
+
+		$route = get_route( $route_name );
+
+		$results['ticket_price'] = $route['ticket_price'];
 
 		if ( ! empty( $results['required'] ) && $rounding_disabled || ! $rounding_disabled ) {
 			return $results;
@@ -510,8 +531,10 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 		'required'        => 0,
 		'route'           => $route_name,
 		'demand'          => $route['demand'],
+		'distance'        => $route['distance'],
+		'ticket_price'    => $route['ticket_price'],
 		'plane'           => $plane_name,
-		'flights_per_day' => calculate_flights_per_day( $plane, $route ),
+		'flights_per_day' => calculate_flights_per_day( $plane, $route, $day_hours ),
 		'pax_per_day'     => get_empty_seat_layout(),
 		'ratio'           => $demand_ratio,
 		'layout'          => $layout,
@@ -527,8 +550,6 @@ function calculate_planes_required( $route_name, $plane_name, $pax_adjust = 1 ) 
 	$flights_per_day = $results['flights_per_day'];
 	$demand          = $route['demand'];
 
-	// Base number of planes to start with.
-	// $num_planes = 0.9;
 	$plane_incr = 0.01;
 	$loop       = 0;
 
